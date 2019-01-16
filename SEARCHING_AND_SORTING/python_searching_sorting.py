@@ -212,7 +212,7 @@ print(alist)
 # If we know that a list is nearly sorted, quick sort will be a bad approach.
 # https://visualgo.net/en/sorting?slide=1 is a good website to go to visualize sorting algorithms.
 
-#QUICK SORT IMPLEMENTATION (time: O(N^2), space: O(N*log(N)))
+# QUICK SORT IMPLEMENTATION (time: O(N log(N) on average but O(N^2) on worst case, space: O(log(N)))
 def quickSort(arr):
    quickSortHelper(arr, 0, len(arr) - 1) # start with low = left = 0, high = right = len(arr) - 1
 
@@ -224,7 +224,8 @@ def quickSortHelper(arr, left, right):
         quickSortHelper(arr, split_point, right)
 
 def partition(arr, left, right):
-   pivot_value = arr[int((left+right)/2)] # pick pivot point
+   pivot_value = arr[int((left+right)/2)] # pick pivot point, since this partitioned pivot value is
+                                          # not guarenteed to be median, we have O(N^2) runtime worst case
    
    while left <= right:
        while arr[left] < pivot_value: # find element on the left that should be on the right
@@ -245,3 +246,48 @@ def partition(arr, left, right):
 alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 quickSort(alist)
 print(alist)
+
+# RADIX (BUCKET) SORT IMPLEMENTATION (time: O(k * N) where k is the number of passes of the sorting algorithm)
+# This algorithm only sorts NUMBERS!
+
+def countSort(arr, exp): # counting sorting method 
+    count = [0] * (10) # initialize count array as 0
+    output = [0] * (len(arr)) # initialize output array that will have elements sorted
+    
+    # store count of occurrences in count[]
+    for i in range(len(arr)):
+        index = (arr[i] / exp) 
+        count[int((index) % 10)] += 1 # smart way to get digits
+        
+    # change count[i] so that count[i] now contains actual
+    # position of this digit in the output array
+    for i in range(1, 10):
+        count[i] += count[i - 1]
+        
+    # build the output array
+    i = len(arr) - 1
+    while i >= 0:
+        index = int(arr[i]/exp)
+        output[count[int((index) % 10)] - 1] = arr[i]
+        count[int((index) % 10)] -= 1
+        i -= 1
+    
+    return output
+
+def radixSort(arr):
+    # find the maximum number to know max number of digits
+    max_val = max(arr)
+    
+    output = arr # output array start as original
+    
+    # do counting sort for every digit
+    # instead of passing digit number, exp is passed
+    # exp is 10^i where i is the current digit number
+    exp = 1 # one's digit
+    while int(max_val/exp) > 0:
+        output = countSort(output, exp)
+        exp *= 10
+    return output
+     
+print(radixSort([1, 4, 146, 25, 7, 53, 2211]))
+#radixSort([1, 4, 146, 25, 7, 53, 2211])   
