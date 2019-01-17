@@ -212,7 +212,7 @@ print(alist)
 # If we know that a list is nearly sorted, quick sort will be a bad approach.
 # https://visualgo.net/en/sorting?slide=1 is a good website to go to visualize sorting algorithms.
 
-# QUICK SORT IMPLEMENTATION (time: O(N log(N) on average but O(N^2) on worst case, space: O(log(N)))
+# QUICK SORT IMPLEMENTATION (time: O(N*log(N) on average but O(N^2) on worst case, space: O(log(N)))
 def quickSort(arr):
    quickSortHelper(arr, 0, len(arr) - 1) # start with low = left = 0, high = right = len(arr) - 1
 
@@ -291,3 +291,44 @@ def radixSort(arr):
      
 print(radixSort([1, 4, 146, 25, 7, 53, 2211]))
 #radixSort([1, 4, 146, 25, 7, 53, 2211])   
+
+# HEAP SORT IMPLEMENTATION O(N log(N))
+# To heapify subtree rooted at index i, n is size of heap 
+
+def heapify(arr, n, i): # heapification is done bottom-up
+    largest = i # initialize largest as root 
+    l = 2 * i + 1     # left = 2*i + 1 
+    r = 2 * i + 2     # right = 2*i + 2 
+  
+    # see if left child of root exists and is greater than root 
+    if l < n and arr[i] < arr[l]: 
+        largest = l 
+  
+    # See if right child of root exists and is greater than root 
+    if r < n and arr[largest] < arr[r]: 
+        largest = r 
+  
+    # change root, if needed 
+    if largest != i: 
+        arr[i], arr[largest] = arr[largest], arr[i] # swap 
+  
+        # heapify the root. 
+        heapify(arr, n, largest) 
+  
+# main function to sort an array of given size 
+def heapSort(arr): 
+    n = len(arr) 
+  
+    # build a maxheap. 
+    for i in range(n, -1, -1): 
+        heapify(arr, n, i) 
+  
+    # one by one extract elements 
+    for i in range(n-1, 0, -1): 
+        arr[i], arr[0] = arr[0], arr[i] # swap 
+        heapify(arr, i, 0) 
+  
+# driver code to test above 
+arr = [ 12, 11, 13, 5, 6, 7] 
+heapSort(arr) 
+print(arr)

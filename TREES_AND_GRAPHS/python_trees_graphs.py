@@ -87,6 +87,13 @@ def postOrderTraversal(node):
 
 # A min-heap is a COMPLETE binary tree (totally filled other than the rightmost elements on the last level)
 # where each node is smaller than its children.
+        
+# Why array based representation for Binary Heap?
+# Since a Binary Heap is a Complete Binary Tree, it can be easily represented as array and array 
+# based representation is space efficient. If the parent node is stored at index I, 
+# the left child can be calculated by 2 * I + 1 and right child by 2 * I + 2 
+# (assuming the indexing starts at 0).
+# CHECK HEAP SORT IN PYTHON_SEARCHING_AND_SORTING
 
 # We have two key operations on a min-heap: insert and extract_min
 
@@ -228,6 +235,13 @@ def search_breadth(root):
 # (midpoint of the path). The search from s visits approximately k^(d/2) as does search from t.
 # That's approximately 2k^(d/2) nodes and therefore a total runtime of O(k^(d/2))
 
+# TIME COMPLEXITIES OF BFS AND DFS
+# The Time complexity of both BFS and DFS will be O(V + E), where V is the number of vertices, 
+# and E is the number of Edges. This again depends on the data strucure that we user to represent 
+# the graph. If it is an adjacency matrix, it will be O(V^2) . If we use an adjacency list, it will 
+# be O(V+E). The difference is a sparsely connected graph and a densely connected graph.
+# Therefore, O(V+E) means whichever term is bigger will dominate the time complexity. 
+# That is why the time complexity of BFS is O(V+E).
 
     
 

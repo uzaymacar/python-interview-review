@@ -120,3 +120,62 @@ class Queue(object):
 
     def dequeue(self): # remove the top element from the queue
         return self.storage.pop(0)
+    
+# PRIORITY QUEUE IMPLEMENTATION
+# Priority Queue is an extension of the queue with following properties.
+# 1) An element with high priority is dequeued before an element with low priority.
+# 2) If two elements have the same priority, they are served according to their order in the queue.
+class PriorityQueue(object): 
+    def __init__(self): 
+        self.queue = [] 
+  
+    def __str__(self): 
+        return ' '.join([str(i) for i in self.queue]) 
+  
+    # for checking if the queue is empty 
+    def isEmpty(self): 
+        return len(self.queue) == 0 
+  
+    # for inserting an element in the queue 
+    def insert(self, data): 
+        self.queue.append(data) 
+  
+    # for popping an element based on priority with O(N) time
+    def delete(self): 
+        try: 
+            max = 0 # here priority is set according to largeness of an integer number
+            for i in range(len(self.queue)): 
+                if self.queue[i] > self.queue[max]: 
+                    max = i 
+            item = self.queue[max] 
+            del self.queue[max] # to delete the item at max index
+            return item 
+        except IndexError: 
+            print() 
+            exit() 
+
+# DIFFERENCE BETWEEN DEL, POP, AND REMOVE
+# Use del to remove an element by index, pop() to remove it by index 
+# if you need the returned value, and remove() to delete an element by value (first encountered)
+# removere quires searching the list, and raises ValueError if no such value occurs in the list.
+
+# When deleting index i from a list of n elements, 
+#the computational complexities of these methods are
+# del     O(n - i)
+# pop     O(n - i)
+# remove  O(n)
+
+# Note that del (unlike pop) allows the removal of a range of indexes because of list slicing:
+# lst = [3, 2, 2, 1]
+# del lst[1:]
+# lst -> [3]
+
+# PRIORITY QUEUE TESTING
+# myQueue = PriorityQueue() 
+# myQueue.insert(12) 
+# myQueue.insert(1) 
+# myQueue.insert(14) 
+# myQueue.insert(7) 
+# print(myQueue)         
+# while not myQueue.isEmpty(): 
+    # print(myQueue.delete())
