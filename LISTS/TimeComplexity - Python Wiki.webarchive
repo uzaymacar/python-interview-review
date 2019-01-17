@@ -1,2074 +1,0 @@
-bplist00“_WebMainResource_WebSubresources’	
-_WebResourceTextEncodingName^WebResourceURL_WebResourceFrameName_WebResourceData_WebResourceMIMETypeUUTF-8_+https://wiki.python.org/moin/TimeComplexityPOSM<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html class="gr__wiki_python_org"><head>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="robots" content="index,nofollow">
-
-<title>TimeComplexity - Python Wiki</title>
-<script type="text/javascript" src="/wiki/common/js/common.js"></script>
-
-<script type="text/javascript">
-<!--
-var search_hint = "Search";
-//-->
-</script>
-
-
-<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/common.css">
-<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/wiki/europython/css/screen.css">
-<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="/wiki/europython/css/print.css">
-<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="/wiki/europython/css/projection.css">
-
-<!-- css only for MS IE6/IE7 browsers -->
-<!--[if lt IE 8]>
-   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/wiki/europython/css/msie.css">
-<![endif]-->
-
-
-<link rel="alternate" title="Python Wiki: TimeComplexity" href="/moin/TimeComplexity?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=TimeComplexity&amp;ddiffs=1" type="application/rss+xml">
-
-
-<link rel="Start" href="/moin/FrontPage">
-<link rel="Alternate" title="Wiki Markup" href="/moin/TimeComplexity?action=raw">
-<link rel="Alternate" media="print" title="Print View" href="/moin/TimeComplexity?action=print">
-<link rel="Search" href="/moin/FindPage">
-<link rel="Index" href="/moin/TitleIndex">
-<link rel="Glossary" href="/moin/WordIndex">
-<link rel="Help" href="/moin/HelpOnFormatting">
-</head>
-
-<body lang="en" dir="ltr" data-gr-c-s-loaded="true">
-
-<div id="header">
-
-<form id="searchform" method="get" action="/moin/TimeComplexity">
-<div>
-<input type="hidden" name="action" value="fullsearch">
-<input type="hidden" name="context" value="180">
-<label for="searchinput" style="display: none;">Search:</label>
-<input id="searchinput" type="text" name="value" value="" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search" class="disabled">
-<input id="titlesearch" name="titlesearch" type="submit" value="Titles" alt="Search Titles" disabled="">
-<input id="fullsearch" name="fullsearch" type="submit" value="Text" alt="Search Full Text" disabled="">
-</div>
-</form>
-<script type="text/javascript">
-<!--// Initialize search form
-var f = document.getElementById('searchform');
-f.getElementsByTagName('label')[0].style.display = 'none';
-var e = document.getElementById('searchinput');
-searchChange(e);
-searchBlur(e);
-//-->
-</script>
-
-<div id="logo"><a href="/moin/FrontPage"></a><a href="http://www.python.org"><img src="/wiki/europython/img/python-logo.gif" alt="Python"></a><a name="logo"></a></div>
-<div id="locationline">
-
-
-<ul id="pagelocation">
-<li><a href="/moin/TimeComplexity">TimeComplexity</a></li>
-</ul>
-
-</div>
-
-<ul id="pagetrail">
-<li><a href="/moin/TimeComplexity">TimeComplexity</a></li>
-</ul>
-</div>
-
-<div id="sidebar">
-<div id="star">
-
-</div>
-<div class="sidepanel">
-
-<ul id="navibar">
-<li class="wikilink"><a href="/moin/FrontPage">FrontPage</a></li><li class="wikilink"><a href="/moin/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="/moin/FindPage">FindPage</a></li><li class="wikilink"><a href="/moin/HelpContents">HelpContents</a></li><li class="current"><a href="/moin/TimeComplexity">TimeComplexity</a></li>
-</ul>
-
-</div>
-<div class="sidepanel">
-<h1>Page</h1>
-<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="/moin/TimeComplexity?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="/moin/TimeComplexity?action=AttachFile" rel="nofollow">Attachments</a></li><li>
-<form class="actionsmenu" method="GET" action="/moin/TimeComplexity">
-<div>
-    
-    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
-                      (this.options[this.selectedIndex].disabled == false)) {
-                this.form.submit();
-            }
-            this.selectedIndex = 0;">
-        <option value="show">More Actions:</option><option value="raw">Raw Text</option>
-<option value="print">Print View</option>
-<option value="refresh">Delete Cache</option>
-<option value="show" disabled="" class="disabled">------------------------</option>
-<option value="SpellCheck">Check Spelling</option>
-<option value="LikePages">Like Pages</option>
-<option value="LocalSiteMap">Local Site Map</option>
-<option value="show" disabled="" class="disabled">------------------------</option>
-<option value="RenamePage" disabled="" class="disabled">Rename Page</option>
-<option value="DeletePage" disabled="" class="disabled">Delete Page</option>
-<option value="show" disabled="" class="disabled">------------------------</option>
-<option value="show" disabled="" class="disabled">------------------------</option>
-<option value="show" disabled="" class="disabled">Remove Spam</option>
-<option value="show" disabled="" class="disabled">Revert to this revision</option>
-<option value="show" disabled="" class="disabled">------------------------</option>
-<option value="SlideShow">SlideShow</option>
-    </select>
-    
-    
-</div>
-<script type="text/javascript">
-<!--// Init menu
-actionsMenuInit('More Actions:');
-//-->
-</script>
-</form>
-</li></ul>
-
-</div>
-<div class="sidepanel">
-<h1>User</h1>
-<ul id="username"><li><a href="/moin/TimeComplexity?action=login" id="login" rel="nofollow">Login</a></li></ul>
-</div>
-</div>
-
-<div id="page" lang="en" dir="ltr">
-<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
-<span class="anchor" id="line-1"></span><p class="line874">This page documents the time-complexity (aka "Big O" or "Big Oh") of various operations in current CPython. Other Python implementations (or older or still-under development versions of CPython) may have slightly different performance characteristics. However, it is generally safe to assume that they are not slower by more than a factor of O(log n). <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span></p><p class="line874">Generally, 'n' is the number of elements currently in the container. 'k' is either the value of a parameter or the number of elements in the parameter. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></p><p class="line867">
-</p><h1 id="list">list</h1>
-<span class="anchor" id="line-6"></span><p class="line874">The Average Case assumes parameters generated uniformly at random. <span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span></p><p class="line874">Internally, a list is represented as an array; the largest costs come from growing beyond the current allocation size (because everything must move), or from inserting or deleting somewhere near the beginning (because everything after that must move). If you need to add/remove at both ends, consider using a collections.deque instead. <span class="anchor" id="line-9"></span></p><div><table style="width: &amp;quot;&amp;quot"><tbody><tr>  <td><p class="line891"><strong>Operation</strong> </p></td>
-  <td><p class="line891"><strong>Average Case</strong> </p></td>
-  <td><p class="line891"><strong><a class="http" href="http://en.wikipedia.org/wiki/Amortized_analysis">Amortized Worst Case</a></strong> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-10"></span><p class="line862">Copy </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-11"></span><p class="line862">Append[1] </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-12"></span><p class="line862">Pop last </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-13"></span><p class="line862">Pop intermediate </p></td>
-  <td><p class="line862">O(k) </p></td>
-  <td><p class="line862">O(k) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-14"></span><p class="line862">Insert </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-15"></span><p class="line862">Get Item </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-16"></span><p class="line862">Set Item </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-17"></span><p class="line862">Delete Item </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-18"></span><p class="line862">Iteration </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-19"></span><p class="line862">Get Slice </p></td>
-  <td><p class="line862">O(k) </p></td>
-  <td><p class="line862">O(k) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-20"></span><p class="line862">Del Slice </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-21"></span><p class="line862">Set Slice </p></td>
-  <td><p class="line862">O(k+n) </p></td>
-  <td><p class="line862">O(k+n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-22"></span><p class="line862">Extend[1] </p></td>
-  <td><p class="line862">O(k) </p></td>
-  <td><p class="line862">O(k) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-23"></span><p class="line891"><a class="http" href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">Sort</a> </p></td>
-  <td><p class="line862">O(n log n) </p></td>
-  <td><p class="line862">O(n log n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-24"></span><p class="line862">Multiply </p></td>
-  <td><p class="line862">O(nk) </p></td>
-  <td><p class="line862">O(nk) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-25"></span><p class="line862">x in s </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-26"></span><p class="line862">min(s), max(s) </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-27"></span><p class="line862">Get Length </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-</tbody></table></div><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><p class="line867">
-</p><h1 id="collections.deque">collections.deque</h1>
-<span class="anchor" id="line-33"></span><p class="line874">A deque (double-ended queue) is represented internally as a doubly linked list. (Well, a list of arrays rather than objects, for greater efficiency.) Both ends are accessible, but even looking at the middle is slow, and adding to or removing from the middle is slower still. <span class="anchor" id="line-34"></span></p><div><table style="width: &amp;quot;&amp;quot"><tbody><tr>  <td><p class="line891"><strong>Operation</strong> </p></td>
-  <td><p class="line891"><strong>Average Case</strong> </p></td>
-  <td><p class="line891"><strong>Amortized Worst Case</strong> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-35"></span><p class="line862">Copy </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-36"></span><p class="line862">append </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-37"></span><p class="line862">appendleft </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-38"></span><p class="line862">pop </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-39"></span><p class="line862">popleft </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(1) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-40"></span><p class="line862">extend </p></td>
-  <td><p class="line862">O(k) </p></td>
-  <td><p class="line862">O(k) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-41"></span><p class="line862">extendleft </p></td>
-  <td><p class="line862">O(k) </p></td>
-  <td><p class="line862">O(k) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-42"></span><p class="line862">rotate </p></td>
-  <td><p class="line862">O(k) </p></td>
-  <td><p class="line862">O(k) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-43"></span><p class="line862">remove </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-</tbody></table></div><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><p class="line867">
-</p><h1 id="set">set</h1>
-<span class="anchor" id="line-49"></span><p class="line874">See dict -- the implementation is intentionally very similar. <span class="anchor" id="line-50"></span></p><div><table><tbody><tr>  <td><p class="line891"><strong>Operation</strong> </p></td>
-  <td><p class="line891"><strong>Average case</strong> </p></td>
-  <td><p class="line891"><strong>Worst Case</strong> </p></td>
-  <td><p class="line891"><strong> notes </strong> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-51"></span><p class="line862">x in s </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-52"></span><p class="line862">Union s|t </p></td>
-  <td><p class="line891"><a class="nonexistent" href="/moin/TimeComplexity_%28SetCode%29">O(len(s)+len(t))</a> </p></td>
-  <td><p class="line862"> </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-53"></span><p class="line862">Intersection s&amp;t </p></td>
-  <td><p class="line862">O(min(len(s), len(t)) </p></td>
-  <td><p class="line862">O(len(s) * len(t)) </p></td>
-  <td><p class="line862">replace "min" with "max" if t is not a set </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-54"></span><p class="line862">Multiple intersection s1&amp;s2&amp;..&amp;sn </p></td>
-  <td><p class="line862"> </p></td>
-  <td><p class="line862">(n-1)*O(l) where l is max(len(s1),..,len(sn)) </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-55"></span><p class="line862">Difference s-t </p></td>
-  <td><p class="line862">O(len(s)) </p></td>
-  <td><p class="line862"> </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-56"></span><p class="line862">s.difference_update(t) </p></td>
-  <td><p class="line862">O(len(t)) </p></td>
-  <td><p class="line862"> </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-57"></span><p class="line862">Symmetric Difference s^t </p></td>
-  <td><p class="line862">O(len(s)) </p></td>
-  <td><p class="line862">O(len(s) * len(t)) </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-58"></span><p class="line862">s.symmetric_difference_update(t) </p></td>
-  <td><p class="line862">O(len(t)) </p></td>
-  <td><p class="line862">O(len(t) * len(s)) </p></td>
-  <td><p class="line862"> </p></td>
-</tr>
-</tbody></table></div><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><ul><li><p class="line862">As seen in the <a class="http" href="http://svn.python.org/projects/python/trunk/Objects/setobject.c">source code</a> the complexities for set difference s-t or s.difference(t) (<tt>set_difference()</tt>) and in-place set difference s.difference_update(t) (<tt>set_difference_update_internal()</tt>) are different! The first one is O(len(s)) (for every element in s add it to the new set, if not in t). The second one is O(len(t)) (for every element in t remove it from s). So care must be taken as to which is preferred, depending on which one is the longest set and whether a new set is needed. <span class="anchor" id="line-64"></span></p></li><li>To perform set operations like s-t, both s and t need to be sets. However you can do the method equivalents even if t is any iterable, for example s.difference(l), where l is a list. <span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span></li></ul><p class="line867">
-</p><h1 id="dict">dict</h1>
-<span class="anchor" id="line-67"></span><p class="line874">The Average Case times listed for dict objects assume that the hash function for the objects is sufficiently robust to make collisions uncommon. The Average Case assumes the keys used in parameters are selected uniformly at random from the set of all keys. <span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span></p><p class="line874">Note that there is a fast-path for dicts that (in practice) only deal with str keys; this doesn't affect the algorithmic complexity, but it can significantly affect the constant factors: how quickly a typical program finishes. <span class="anchor" id="line-70"></span></p><div><table style="width: &amp;quot;&amp;quot"><tbody><tr>  <td><p class="line891"><strong>Operation</strong> </p></td>
-  <td><p class="line891"><strong>Average Case</strong> </p></td>
-  <td><p class="line891"><strong>Amortized Worst Case</strong> </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-71"></span><p class="line862">Copy[2] </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-72"></span><p class="line862">Get Item </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-73"></span><p class="line862">Set Item[1] </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-74"></span><p class="line862">Delete Item </p></td>
-  <td><p class="line862">O(1) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-<tr>  <td><span class="anchor" id="line-75"></span><p class="line862">Iteration[2] </p></td>
-  <td><p class="line862">O(n) </p></td>
-  <td><p class="line862">O(n) </p></td>
-</tr>
-</tbody></table></div><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><p class="line867">
-</p><h1 id="Notes">Notes</h1>
-<span class="anchor" id="line-81"></span><p class="line874">[1] = These operations rely on the "Amortized" part of "Amortized Worst Case". Individual actions may take surprisingly long, depending on the history of the container. <span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span></p><p class="line862">[2] = For these operations, the worst case <em>n</em> is the maximum size the container ever achieved, rather than just the current size. For example, if N objects are added to a dictionary, then N-1 are deleted, the dictionary will still be sized for N objects (at least) until another insertion is made. <span class="anchor" id="line-84"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" lang="en" dir="ltr">TimeComplexity  (last edited 2017-06-05 19:58:18 by <span title="JonathanHartley @ 47-44-77-8.static.stcd.mn.charter.com[47.44.77.8]"><a class="nonexistent" href="/moin/JonathanHartley" title="JonathanHartley @ 47-44-77-8.static.stcd.mn.charter.com[47.44.77.8]">JonathanHartley</a></span>)</p>
-
-<div id="pagebottom"></div>
-</div>
-
-
-<div id="footer">
-<ul id="credits">
-<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
-</ul>
-
-
-</div>
-<p style="text-align: center; font-size: 85%"><a href="/moin/FrontPage#use">Unable to edit the page? See the FrontPage for instructions.</a></p>
-
-
-</body></html>Ytext/html™$(,048‘_WebResourceResponseO¸bplist00‘opX$versionX$objectsY$archiverT$top Ü†Ø"#)*0123OPQRSTUVWXYZ[\]^_`abcdeijU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1Ä ÄÄ	ÄÄ!ÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_0https://wiki.python.org/wiki/common/js/common.js“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷JË »”456BNWNS.keysZNS.objects´789:;<=>?@AÄ	Ä
-ÄÄÄÄÄÄÄÄÄ´CDEFGHIJKLMÄÄÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeTEtag]Last-Modified_Strict-Transport-SecurityX__hhaa__]Accept-RangesTDate_Content-Encoding^Content-LengthTVaryVApache_application/javascript_"448f4-6d3b-540cb0df12700"_Tue, 08 Nov 2016 14:35:40 GMT_#max-age=31536000; includeSubDomains_p
-
-YnBsaXN0MDDaAQIDBAUGBwgJCgsNDxETFRcZGx1WU2VydmVyXENvbnRlbnQtVHlwZVRWYXJ5XUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV8QEENvbnRlbnQtRW5jb2RpbmdeQ29udGVudC1MZW5ndGhURXRhZ6EMVkFwYWNoZaEOXxAWYXBwbGljYXRpb24vamF2YXNjcmlwdKEQXxAPQWNjZXB0LUVuY29kaW5noRJfEB1UdWUsIDA4IE5vdiAyMDE2IDE0OjM1OjQwIEdNVKEUXxAjbWF4LWFnZT0zMTUzNjAwMDsgaW5jbHVkZVN1YkRvbWFpbnOhFlVieXRlc6EYXxAdTW9uLCAyNiBOb3YgMjAxOCAwNDoxNzo1MyBHTVShGlRnemlwoRxUODIxMKEeXxAaIjQ0OGY0LTZkM2ItNTQwY2IwZGYxMjcwMCIACAAdACQAMQA2AEQAYABuAHMAhgCVAJoAnACjAKUAvgDAANIA1AD0APYBHAEeASQBJgFGAUgBTQFPAVQBVgAAAAAAAAIBAAAAAAAAAB8AAAAAAAAAAAAAAAAAAAFzUbytes_Mon, 26 Nov 2018 04:17:53 GMTTgzipT8210_Accept-Encoding“+,fg_NSMutableDictionary£fh/\NSDictionary_application/javascript“+,kl_NSHTTPURLResponse£mn/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—qr_WebResourceResponseÄ    # - 2 7 \ b } ü ¡ ƒ Ê È47:\~ÅÉÖáâãçèëíîñòö°©µ∑πªÓÛ˛"$&-5@LNPRTVXZ\^`bnprtvxz|~ÄÇÑÜçöü≠…“‡Â¯,Iiè	).3EJ`dqäè£ßª…€ﬁÙ             s              ˆ_0https://wiki.python.org/wiki/common/js/common.jsOm;//
-// MoinMoin commonly used JavaScript functions
-//
-
-// We keep here the state of the search box
-searchIsDisabled = false;
-
-function searchChange(e) {
-    // Update search buttons status according to search box content.
-    // Ignore empty or whitespace search term.
-    var value = e.value.replace(/\s+/, '');
-    if (value == '' || searchIsDisabled) { 
-        searchSetDisabled(true);
-    } else {
-        searchSetDisabled(false);
-    }
-}
-
-function searchSetDisabled(flag) {
-    // Enable or disable search
-    document.getElementById('fullsearch').disabled = flag;
-    document.getElementById('titlesearch').disabled = flag;
-}
-
-function searchFocus(e) {
-    // Update search input content on focus
-    if (e.value == search_hint) {
-        e.value = '';
-        e.className = '';
-        searchIsDisabled = false;
-    }
-}
-
-function searchBlur(e) {
-    // Update search input content on blur
-    if (e.value == '') {
-        e.value = search_hint;
-        e.className = 'disabled';
-        searchIsDisabled = true;
-    }
-}
-
-function actionsMenuInit(title) {
-    // Initialize action menu
-    for (i = 0; i < document.forms.length; i++) {
-        var form = document.forms[i];
-        if (form.className == 'actionsmenu') {
-            // Check if this form needs update
-            var div = form.getElementsByTagName('div')[0];
-            var label = div.getElementsByTagName('label')[0];
-            if (label) {
-                // This is the first time: remove label and do buton.
-                div.removeChild(label);
-                var dobutton = div.getElementsByTagName('input')[0];
-                div.removeChild(dobutton);
-                // and add menu title
-                var select = div.getElementsByTagName('select')[0];
-                var item = document.createElement('option');
-                item.appendChild(document.createTextNode(title));
-                item.value = 'show';
-                select.insertBefore(item, select.options[0]);
-                select.selectedIndex = 0;
-            }
-        }
-    }
-}
-
-// use this instead of assigning to window.onload directly:
-function addLoadEvent(func) {
-    // alert("addLoadEvent " + func)
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            oldonload();
-            func();
-        }
-    }
-}
-
-// copy from fckeditor browser check code (fckeditor.js:298, function : FCKeditor_IsCompatibleBrowser)
-function can_use_gui_editor() {
-    var sAgent = navigator.userAgent.toLowerCase() ;
-
-    // Internet Explorer 5.5+
-    if ( /*@cc_on!@*/false && sAgent.indexOf("mac") == -1 )
-    {
-        var sBrowserVersion = navigator.appVersion.match(/MSIE (.\..)/)[1] ;
-        return ( sBrowserVersion >= 5.5 ) ;
-    }
-
-    // Gecko (Opera 9 tries to behave like Gecko at this point).
-    if ( navigator.product == "Gecko" && navigator.productSub >= 20030210 && !( typeof(opera) == 'object' && opera.postError ) )
-        return true ;
-
-    // Opera 9.50+
-    if ( window.opera && window.opera.version && parseFloat( window.opera.version() ) >= 9.5 )
-        return true ;
-
-    // Adobe AIR
-    // Checked before Safari because AIR have the WebKit rich text editor
-    // features from Safari 3.0.4, but the version reported is 420.
-    if ( sAgent.indexOf( ' adobeair/' ) != -1 )
-        return ( sAgent.match( / adobeair\/(\d+)/ )[1] >= 1 ) ; // Build must be at least v1
-
-    // Safari 3+
-    if ( sAgent.indexOf( ' applewebkit/' ) != -1 )
-        return ( sAgent.match( / applewebkit\/(\d+)/ )[1] >= 522 ) ;    // Build must be at least 522 (v3)
-
-    return false ;
-
-}
-
-
-function update_edit_links() {
-    // Update editlink according if if the browser is compatible
-    if (can_use_gui_editor() == false){
-        //alert("update_edit_links: can't use gui editor");
-        return;
-    }
-    var editlinks = document.getElementsByName("editlink");
-    for (i = 0; i < editlinks.length; i++) {
-        var link = editlinks[i];
-        href = link.href.replace('editor=textonly','editor=guipossible');
-        link.href = href;
-        //alert("update_edit_links: modified to guipossible");
-    }
-}
-
-
-function add_gui_editor_links() {
-    // Add gui editor link after the text editor link
-    
-    // If the variable is not set or browser is not compatible, exit
-    try {gui_editor_link_href}
-    catch (e) {
-        //alert("add_gui_editor_links: gui_editor_link_href not here");
-        return
-    }
-    if (can_use_gui_editor() == false){
-        //alert("add_gui_editor_links: can't use gui_editor");
-        return;
-    }
-    var all = document.getElementsByName('texteditlink');
-    for (i = 0; i < all.length; i++) {
-        var textEditorLink = all[i];
-        // Create a list item with a link
-        var guiEditorLink = document.createElement('a');
-        guiEditorLink.href = gui_editor_link_href;
-        var text = document.createTextNode(gui_editor_link_text);
-        guiEditorLink.appendChild(text);
-        var listItem = document.createElement('li')
-        listItem.appendChild(guiEditorLink);
-        // Insert in the editbar
-        var editbar = textEditorLink.parentNode.parentNode
-        var nextListItem = textEditorLink.parentNode.nextSibling;
-        editbar.insertBefore(listItem, nextListItem);
-        //alert("add_gui_editor_links: added gui editor link");
-    }
-}
- 
-
-function show_switch2gui() {
-    // Show switch to gui editor link if the browser is compatible
-    if (can_use_gui_editor() == false) return;
-    
-    var switch2gui = document.getElementById('switch2gui')
-    if (switch2gui) {
-        switch2gui.style.display = 'inline';
-    }
-}
-
-// for long documents with many comments this is expensive to calculate,
-// thus we keep it here:
-comments = null;
-
-function toggleComments() {
-    // Toggle visibility of every tag with class "comment"
-    for (i = 0; i < comments.length; i++){
-        el = comments[i];
-        if ( el.style.display != 'none' ) {
-            el.style.display = 'none';
-        } else {
-            el.style.display = '';
-        }
-    }
-}
-
-function show_toggleComments() {
-    // Show edit bar item for toggling inline comments on/off only if inline comments exist on the page
-    comments = getElementsByClassName('comment', null, document);
-    if (comments.length > 0) {
-        var buttons = getElementsByClassName('toggleCommentsButton', null, document);
-        for (i = 0; i < buttons.length; i++){
-            el = buttons[i];
-            el.style.display = '';
-        }
-    }
-}
-
-
-function load() {
-    // Do not name this "onload", it does not work with IE :-)
-    // TODO: create separate onload for each type of view and set the
-    // correct function name in the html. 
-    // e.g <body onlod='editor_onload()'>
-
-    // login focus
-    if (document.forms['loginform']) {
-        document.forms['loginform'].elements['name'].focus();
-    }
-    
-    // Page view stuff
-    update_edit_links();
-    add_gui_editor_links();
-    
-    // Editor stuff
-    show_switch2gui();
-
-    // Enable menu item "ToggleComments" if inline comments exist
-    show_toggleComments();
- 
-    // data browser widget
-    dbw_hide_buttons();
-}
-
-
-function before_unload(evt) {
-    // TODO: Better to set this in the editor html, as it does not make
-    // sense elsehwere.
-    // confirmleaving is available when editing
-    try {return confirmleaving();}
-    catch (e) {}
-}
-
-// Initialize after loading the page
-addLoadEvent(load)
-
-// Catch before unloading the page
-window.onbeforeunload = before_unload
-
-function dbw_update_search(dbw_id)
-{
-    var table = document.getElementById(dbw_id+'table');
-    var cell;
-    var shown;
-    var i
-    var cols = table.rows[0].cells.length;
-    var filter = new Array();
-    var dofilter = new Array();
-    var form = document.forms[dbw_id+'form'];
-
-    for (i = 0; i < cols; i++) {
-        dofilter[i] = false;
-        if (form[dbw_id+'filter'+i]) {
-            dofilter[i] = true;
-            filter[i] = form[dbw_id+'filter'+i].value;
-            if (filter[i] == '[all]')
-                dofilter[i] = false;
-            if (filter[i] == '[empty]')
-                filter[i] = '';
-        }
-    }
-
-    for (i = 1; i < table.rows.length; i++) {
-        var show = true;
-        for (col = 0; col < cols; col++) {
-            if (!dofilter[col])
-                continue;
-
-            cell = table.rows[i].cells[col];
-
-            if (filter[col] == '[notempty]') {
-                if (cell.abbr == '') {
-                    show = false;
-                    break;
-                }
-            } else if (filter[col] != cell.abbr) {
-                show = false;
-                break;
-            }
-        }
-        if (show)
-            table.rows[i].style.display = '';
-        else
-            table.rows[i].style.display = 'none';
-    }
-}
-
-function dbw_hide_buttons() {
-    var form;
-    var elem;
-    var name;
-
-    for (var fidx = 0; fidx < document.forms.length; fidx++) {
-        form = document.forms[fidx];
-        for (var eidx = 0; eidx < form.elements.length; eidx++) {
-            elem = form.elements[eidx];
-            name = elem.name;
-            if (name) {
-                if (name.indexOf('dbw.') >= 0 && name.substr(-7) == '.submit')
-                    elem.style.display = 'none';
-            }
-        }
-    }
-}
-
-/*  getElementsByClassName
-    Developed by Robert Nyman, http://www.robertnyman.com
-    Code/licensing: http://code.google.com/p/getelementsbyclassname/ (MIT license)
-    Version: 1.0.1
-*/  
-var getElementsByClassName = function (className, tag, elm){
-    if (document.getElementsByClassName) {
-        getElementsByClassName = function (className, tag, elm) {
-            elm = elm || document;
-            var elements = elm.getElementsByClassName(className),
-                nodeName = (tag)? new RegExp("\\b" + tag + "\\b", "i") : null,
-                returnElements = [],
-                current;
-            for(var i=0, il=elements.length; i<il; i+=1){
-                current = elements[i];
-                if(!nodeName || nodeName.test(current.nodeName)) {
-                    returnElements.push(current);
-                }
-            }
-            return returnElements;
-        };
-    }
-    else if (document.evaluate) {
-        getElementsByClassName = function (className, tag, elm) {
-            tag = tag || "*";
-            elm = elm || document;
-            var classes = className.split(" "),
-                classesToCheck = "",
-                xhtmlNamespace = "http://www.w3.org/1999/xhtml",
-                namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace)? xhtmlNamespace : null,
-                returnElements = [],
-                elements,
-                node;
-            for(var j=0, jl=classes.length; j<jl; j+=1){
-                classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
-            }
-            try {
-                elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
-            }
-            catch (e) {
-                elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
-            }
-            while ((node = elements.iterateNext())) {
-                returnElements.push(node);
-            }
-            return returnElements;
-        };
-    }
-    else {
-        getElementsByClassName = function (className, tag, elm) {
-            tag = tag || "*";
-            elm = elm || document;
-            var classes = className.split(" "),
-                classesToCheck = [],
-                elements = (tag === "*" && elm.all)? elm.all : elm.getElementsByTagName(tag),
-                current,
-                returnElements = [],
-                match;
-            for(var k=0, kl=classes.length; k<kl; k+=1){
-                classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
-            }
-            for(var l=0, ll=elements.length; l<ll; l+=1){
-                current = elements[l];
-                match = false;
-                for(var m=0, ml=classesToCheck.length; m<ml; m+=1){
-                    match = classesToCheck[m].test(current.className);
-                    if (!match) {
-                        break;
-                    }
-                }
-                if (match) {
-                    returnElements.push(current);
-                }
-            }
-            return returnElements;
-        };
-    }
-    return getElementsByClassName(className, tag, elm);
-};
-
-
-// ===========================================================================
-// The following functions are part of scroll edit textarea on double-click
-//
-// This code is public domain (or primarily public domain).
-// Do whatever you want with it.  In particular, you may release it under
-// GPL 2.0 or incorporate it into projects that use GPL 2.0.
-// -- Radomir Dopieralski and Roger D. Haase
-
-// Debugging helpers
-//  save debugging state in cookie - presence of a cookie means debugging mode is on
-cookiePath = '/';
-function autoScrollSetCookie (){
-    document.cookie = 'autoscrolldebug=on; path=' + cookiePath + '; ';
-}
-function autoScrollDeleteCookie (){
-    var cookie_date = new Date ( );  // current date & time
-    cookie_date.setTime ( cookie_date.getTime() - 1 );
-    document.cookie = 'autoscrolldebug=; expires=' + cookie_date.toGMTString() + '; path=' + cookiePath + '; ';
-}
-function autoScrollGetCookie (){
-    var results = document.cookie.match ( '(^|;) ?' + "autoscrolldebug" + '=([^;]*)(;|$)' );
-    if ( results ) {
-        return ( unescape ( results[2] ) );
-    } else {
-        return null;
-    }
-}
-// turn on debugging mode by previewing, saving or reading a page with "auto scroll debug on" within an h1 header
-// = My Page auto scroll debug on =
-// once set on,debug mode says on for current session or until turned off with
-// = My Page auto scroll debug off =
-autoScrollDebugOn = 0;
-// this function executed on page load
-function turnDebugOnOrOff () {
-    // set global variable for use by cookie functions
-    cookiePath = document.getElementsByName('edit_on_doubleclick')[0].content;
-    var hOnes = document.getElementsByTagName('H1');
-    for (var i = 0; i < hOnes.length; ++i) {
-        var header = hOnes[i].textContent || hOnes[i].innerText;
-        if (header.match ('auto scroll debug on')) {
-            autoScrollSetCookie ();
-        }
-        if (header.match ('auto scroll debug off')) {
-            autoScrollDeleteCookie ();
-        }
-    }
-    if (autoScrollGetCookie ()) {
-        autoScrollDebugOn = 1;
-    } else {
-        autoScrollDebugOn = 0;
-    }
-}
-
-// functions used for testing - mouseover tooltip with tagName and scroll line number
-function doMouseOver(e) {
-    var targ = getNode(e);
-    targ.title = 'tagName='+targ.tagName+'  line='+targ.scrollLine;
-}
-function doMouseOut(e) {
-    var targ = getNode(e);
-    targ.removeAttribute('title');
-}
-// add leading zeros to hours, minutes, seconds, milliseconds
-function leadingZeros (nbr,count) { 
-    var strNbr = nbr + '';
-    while (strNbr.length < count) {
-        strNbr = "0" + strNbr; 
-    }
-    return strNbr;
-}
-// format hours, minutes, seconds, and ms
-function formatTime (t) {
-    var sHours = leadingZeros (t.getHours(), 2);
-    var sMinutes = leadingZeros (t.getMinutes (), 2);
-    var sSeconds = leadingZeros (t.getSeconds (), 2);
-    var sMilliseconds = leadingZeros (t.getMilliseconds (), 3);
-    return sHours + ':' + sMinutes + ':' + sSeconds + ':' + sMilliseconds;
-}
-
-// this variable is available as easy way to display trace info
-autoDebugTrace = '';
-function showStartStopTimes (startTime) {
-    // display a message with start and end times at top of page
-    var endTime = new Date();
-    var tStart ='auto scroll debug on -- Initialization start H:M:S:ms=' + formatTime (startTime);
-    var tEnd = '  end H:M:S:ms=' + formatTime (endTime);
-    var timingMsg = document.createElement ('P');
-    timingMsg.innerHTML = tStart + tEnd;
-    timingMsg.style. color = "red";
-    var contentDiv;
-    if (document.getElementById ('preview')) {
-        contentDiv = document.getElementById ('preview');
-    } else {
-        contentDiv = document.getElementById ('content');
-    }
-    contentDiv.insertBefore (timingMsg, contentDiv.firstChild);
-    // display trace info is there is any
-    if (autoDebugTrace) {
-        alert(autoDebugTrace);
-    }
-}
-// end of debugging helpers
-
-// this scrolls the textarea after a doubleclick - jumpLine is scroll-to line
-function scrollTextarea(jumpLine) {
-    var txtBox = document.getElementById('editor-textarea');
-    scroll(0,0); 
-    if (txtBox) {
-        // Calculate the cursor position - IE supports innerText, not textContent
-        var textLines = txtBox.textContent || txtBox.innerText;
-        textLines = textLines.match(/(.*(\r\n|\r|\n))/g);
-        var scrolledText = '';
-        for (var i = 0; i < textLines.length && i < jumpLine; ++i) {
-            scrolledText += textLines[i];
-        }
-        txtBox.focus();
-        if (txtBox.setSelectionRange) {
-            // Standard-compliant browsers
-            // Move the cursor
-            txtBox.setSelectionRange(scrolledText.length, scrolledText.length);
-            // Calculate how far to scroll, by putting the text that is to be
-            // above the fold in a DIV, and checking the DIV's height.
-            var scrollPre = document.createElement('pre');
-            txtBox.parentNode.appendChild(scrollPre);
-            var style = window.getComputedStyle(txtBox, '');
-            scrollPre.style.lineHeight = style.lineHeight;
-            scrollPre.style.fontFamily = style.fontFamily;
-            scrollPre.style.fontSize = style.fontSize;
-            scrollPre.style.padding = 0;
-            scrollPre.style.letterSpacing = style.letterSpacing;
-            // Different browsers call this value differently:
-            try { scrollPre.style.whiteSpace = "-moz-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "-o-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "-pre-wrap"; } catch(e) {}
-            try { scrollPre.style.whiteSpace = "pre-wrap"; } catch(e) {}
-            scrollPre.textContent = scrolledText;
-            txtBox.scrollTop = scrollPre.scrollHeight-100;
-            scrollPre.parentNode.removeChild(scrollPre);
-        } else if (txtBox.createTextRange) {
-            // Microsoft Internet Explorer
-            // We don't need to scroll, it will do it automatically, just move
-            // the cursor.
-            var range = txtBox.createTextRange();
-            range.collapse(true);
-            range.moveEnd('character', scrolledText.length);
-            range.moveStart('character', scrolledText.length);
-            range.select();
-            txtBox.__column = 1;
-        }
-    } 
-}
-
-// stop event bubbling
-function stopBubbling(e) {
-    if (e.stopPropagation) {
-        e.stopPropagation(); 
-    }
-    e.cancelBubble = true;
-}
-
-// stop bubbling and return event node 
-function getNode(e) {
-    // window.event and e.srcElement are IE
-    var e = e || window.event;
-    var targ = e.target || e.srcElement;
-    if (targ.nodeType == 3) {
-        // workaround safari
-        targ = targ.parentNode;
-    }
-    stopBubbling(e);
-    return targ;
-}
-
-// add action=edit and scrollLine to document.location
-function doActionEdit(e) {
-    var targ = getNode(e);
-    // MoinMoin counts starting with 1, scrollTextarea starts with 0
-    document.location.search = '?action=edit&line='+(targ.scrollLine-1);
-}
-
-// scroll textarea on this page
-function doTextareaScroll(e) {
-    var targ = getNode(e);
-    scrollTextarea(targ.scrollLine-1);
-}
-
-// This is the function that registers double clicks.
-// isPreview is true if the current page is an edit draft preview
-function setCallback(node, line, isPreview) {
-    if (node.scrollLine) {
-        // this node already processed
-        return;
-    } else {
-        node.scrollLine = line;
-        if(window.addEventListener){ 
-            if (isPreview) {
-                node.addEventListener('dblclick',doTextareaScroll,false);
-            } else {
-                node.addEventListener('dblclick',doActionEdit,false);
-            }
-            if (autoScrollDebugOn) {
-                node.addEventListener('mouseover', doMouseOver,false); 
-                node.addEventListener('mouseout',doMouseOut,false); 
-            }
-        } else {
-            // IE
-            if (isPreview) {
-                node.attachEvent('ondblclick',doTextareaScroll);
-            } else {
-                node.attachEvent('ondblclick',doActionEdit);
-            }
-            if (autoScrollDebugOn) {
-                node.attachEvent('onmouseover', doMouseOver,false); 
-                node.attachEvent('onmouseout',doMouseOut,false);
-            }
-        }
-    }
-}
-
-// walk part of DOM and add doubleclick function to all nodes with tagNames
-function walkDom (someNode, lineNbr, isPreview, nextId, topId) {
-
-    //~ // handle special cases of paragraph on line after <<TOC>> and ---- (horizontal rule)
-    //~ //   But this effects paragraphs on multiple lines: doubleclick goes to paragraph bottom rather than top.
-    //~ //   Seems best to live with TOC and HR problem and wait for Moin2.
-    //~ var next1, next2, next3;
-    //~ var nextNbr = 'line-' + (lineNbr-0+1);
-    //~ if (someNode.parentNode.tagName == 'P' && someNode.parentNode.scrollLine) {
-        //~ next1 = someNode.nextSibling;
-        //~ if (next1 && next1.tagName != 'SPAN') {
-            //~ next2 = next1.nextSibling;
-        //~ }
-        //~ if (next2 && next2.id == nextNbr) {
-            //~ alert('Correcting scrollLine='+lineNbr);
-            //~ someNode.parentNode.scrollLine = lineNbr;
-            //~ return;
-        //~ }
-    //~ }
-    
-    var ie8LoopCounter = 0;
-    var doChild = true;
-    while (!(someNode.id == nextId) && !(someNode.id == topId)) {
-        // workaround IE8 bug:  http://moinmo.in/MoinMoinBugs/FormInsideTableCausesIE8ScriptLoop
-        ie8LoopCounter += 1;
-        if (ie8LoopCounter > 10000) {
-            return;
-        }
-        
-        // add children, add siblings, add parent
-        if (doChild && someNode.firstChild) {
-            someNode = someNode.firstChild;
-        } else {
-            doChild = true;
-            if (someNode.nextSibling) {
-                someNode = someNode.nextSibling;
-            } else {
-                if (someNode.parentNode.nextSibling) {
-                someNode = someNode.parentNode.nextSibling;
-                } else {
-                    doChild = false;
-                    someNode = someNode.parentNode.parentNode;
-                }
-            }
-        }
-        if (doChild && someNode.tagName && !(someNode.id == nextId) && !(someNode.id == topId)) {
-            setCallback(someNode, lineNbr, isPreview);
-        }
-    }
-}
-
-// run during page load when user may edit current page OR is viewing draft preview
-function setSpanTags(isPreview) {
-    var startTime = new Date();
-    // find all the SPAN tags with an ID beginning with "line-"
-    var spanTags = document.getElementsByTagName('span');
-    var marks = [];
-    for (var i = 0; i < spanTags.length; ++i) {
-        if (spanTags[i].id && spanTags[i].id.substring(0, 5) == 'line-') {
-            marks.push(spanTags[i]);
-        }
-    }
-    var top = document.getElementById('content');
-    var bottom = document.getElementById('bottom');
-    // add expected stopping point to end of array for convenience
-    if (bottom) {
-        marks.push(bottom); 
-    } else {
-        if (autoScrollDebugOn) {
-            alert("auto scroll debug 1: document.getElementById('bottom') failed");
-        }
-    }
-    var skipTo = -1; 
-    // loop through span tags and apply double-click events to appropriate node(s) 
-    for (i = 0; i < marks.length-1; ++i) {
-        var mark = marks[i];
-        // skip span tags generated by embedded parsers
-        if (i > skipTo) {
-            // split the ID into parts: looks like "line-22" or "line-22-1"
-            var lineParts = mark.id.split('-');
-            var line = lineParts[1];
-            if (lineParts.length == 3) {
-                // have found output from embedded parser
-                // find next span id that looks like "line-n" and the "line-n-n" just before it
-                var j = i - 0;
-                while (lineParts.length == 3) {
-                    j++;
-                    lineParts = marks[j].id.split('-');
-                }
-                // determine how many lines, starting line number, and add double-click events
-                var nbrParsedLines = j - i;
-                var parsedLineNbr = lineParts[1] - nbrParsedLines - 1;
-                for (var k = 0; k < nbrParsedLines; ++k) { 
-                    if (marks[i+k] && marks[i+k+1] && marks[i+k+1].id) {
-                        walkDom (marks[i+k], parsedLineNbr+k, isPreview, marks[i+k+1].id, top.id);
-                    } else {
-                        if (autoScrollDebugOn) {
-                            alert('auto scroll debug 2: skipping walkDom, i=' + i + ' k=' + k + ' marks[i].id=' + marks[i].id);
-                        }
-                    }
-                }
-                // done with embedded parser lines, tell main loop to skip these
-                skipTo = j - 1; 
-            } else {
-                // walk part of DOM and apply doubleclick function to every node with a tagname
-                if (marks[i+1] && marks[i+1].id) {
-                    walkDom (mark, line, isPreview, marks[i+1].id, top.id);
-                } else {
-                    if (autoScrollDebugOn) {
-                        alert('auto scroll debug 3: skipping walkDom, i=' + i + ' marks[i].id=' + marks[i].id);
-                    }
-                }
-            }
-        }
-    }
-    if (autoScrollDebugOn && document.getElementById('content'))  {
-        for (i = 0; i < marks.length-1; ++i) {
-            marks[i].innerHTML = ' ' + marks[i].id + ' ';
-            marks[i].style. color = "red";
-        }
-        showStartStopTimes(startTime);
-    }
-}
-
-// test to see if this user has selected or defaulted to edit_on_doubleclick AND
-// whether we are viewing a page, editing a page, or previewing an edit draft 
-function scrollTextareaInit() {
-    // look for meta tag -- is edit_on_doubleclick present?
-    if (!document.getElementsByName('edit_on_doubleclick').length) {
-        return;
-    }
-    turnDebugOnOrOff ();
-    // are we viewing a page - both gui and text editors will have button named button_save
-    if (!document.getElementsByName('button_save').length) {
-        setSpanTags(0);
-        return;
-    }
-    // we are in editor -- is there a line number specified in URL?
-    var lineMatch = document.location.search.match(/line=(\d*)/);
-    if (lineMatch) {
-        scrollTextarea(lineMatch[1]);
-        return;
-    } 
-    if (document.getElementById('preview')) {
-        // is an editor preview
-        setSpanTags(1);
-    }
-}
-
-// The DOM ready check for Internet Explorer
-function ieScrollCheck() {
-	try {
-		// If IE is used, use the trick by Diego Perini
-		document.documentElement.doScroll("left");
-	} catch( error ) {
-		setTimeout( ieScrollCheck, 1 );
-		return;
-	}
-    scrollTextareaInit();
-}
-
-// run auto scroll init As Soon As Possible -- prior to onload for modern browsers
-function runASAP() {
-    if (document.addEventListener) { 
-        // Firefox 3.6, Chrome 4.0.249.89, Safari for Windows 4.04, Opera 10.5beta, and maybe older versions
-        // schedule func to be run when DOM complete, usually before last image loaded
-        document.addEventListener("DOMContentLoaded", scrollTextareaInit, false);
-    } else {
-        if (document.documentElement.doScroll && window == window.top) {
-            // IE 5-8 and not using frames
-            ieScrollCheck();
-        } else {
-            addLoadEvent(scrollTextareaInit);
-        }
-    }
-}
-// auto scroll initialization starts here
-runASAP();
-
-_application/javascript‘O¬bplist00‘noX$versionX$objectsY$archiverT$top Ü†Ø!#)*0123OPQRSTUVWXYZ[\]^_`abcdeiU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄ ÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_6https://wiki.python.org/wiki/europython/css/common.css“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷` »”456BNWNS.keysZNS.objects´789:;<=>?@AÄ	Ä
-ÄÄÄÄÄÄÄÄÄ´CEFGHIJKLMÄÄÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeTEtag]Last-Modified_Strict-Transport-SecurityX__hhaa__]Accept-RangesTDate_Content-Encoding^Content-LengthTVaryVApacheXtext/css_"3eb32-2f36-4b9199603e040"_Thu, 16 Feb 2012 19:10:49 GMT_#max-age=31536000; includeSubDomains_\
-
-YnBsaXN0MDDaAQIDBAUGBwgJCgsNDxETFRcZGx1WU2VydmVyXENvbnRlbnQtVHlwZVRWYXJ5XUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV8QEENvbnRlbnQtRW5jb2RpbmdeQ29udGVudC1MZW5ndGhURXRhZ6EMVkFwYWNoZaEOWHRleHQvY3NzoRBfEA9BY2NlcHQtRW5jb2RpbmehEl8QHVRodSwgMTYgRmViIDIwMTIgMTk6MTA6NDkgR01UoRRfECNtYXgtYWdlPTMxNTM2MDAwOyBpbmNsdWRlU3ViRG9tYWluc6EWVWJ5dGVzoRhfEB1Nb24sIDI2IE5vdiAyMDE4IDA0OjE3OjU0IEdNVKEaVGd6aXChHFQzNDQyoR5fEBoiM2ViMzItMmYzNi00YjkxOTk2MDNlMDQwIgAIAB0AJAAxADYARABgAG4AcwCGAJUAmgCcAKMApQCuALAAwgDEAOQA5gEMAQ4BFAEWATYBOAE9AT8BRAFGAAAAAAAAAgEAAAAAAAAAHwAAAAAAAAAAAAAAAAAAAWM=Ubytes_Mon, 26 Nov 2018 04:17:54 GMTTgzipT3442_Accept-Encoding“+,fg_NSMutableDictionary£fh/\NSDictionary“+,jk_NSHTTPURLResponse£lm/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—pq_WebResourceResponseÄ    # - 2 7 [ a | û ¿ √ Â Ë
-369[}ÄÇÑÜàäåéêëìïóô†®¥∂∏∫Û¯')+2:EQSUWY[]_acegsuwy{}ÅÉÖáâãíü§≤Œ◊ÂÍ˝!>^Ñ‰Í
-&+AERWkoÉë£¶º             r              æ_6https://wiki.python.org/wiki/europython/css/common.cssO/6/*  common.css - MoinMoin Default Styles
-
-Copyright (c) 2001, 2002, 2003 by Juergen Hermann
-*/
-
-/* content styles */
-
-html {
-	background-color: white;
-	color: black;
-	font-family: sans-serif;
-	font-size: 1em;
-}
-
-body {
-    margin: 0;
-    line-height: 1.3;
-}
-
-/* Links */
-
-
-a:link {color: #00E;}
-a:visited {color: #551A8B;}
-a {color: #00E;}
-
-#content a {
-    text-decoration: none;
-    border-bottom: 1px dashed #ddd;
-}
-a:hover, a:visited:hover {
-    color: #000;
-}
-
-a.nonexistent:visited, a.nonexistent, 
-a.badinterwiki:visited, a.badinterwiki {color: gray;}
-
-a.www:before {content: url(../img/moin-www.png); margin: 0 0.2em;}
-a.http:before {content: url(../img/moin-www.png); margin: 0 0.2em;}
-a.https:before {content: url(../img/moin-www.png); margin: 0 0.2em;}
-a.file:before {content: url(../img/moin-ftp.png); margin: 0 0.2em;}
-a.ftp:before {content: url(../img/moin-ftp.png); margin: 0 0.2em;}
-a.nntp:before {content: url(../img/moin-news.png); margin: 0 0.2em;}
-a.news:before {content: url(../img/moin-news.png); margin: 0 0.2em;}
-a.telnet:before, a.ssh:before {content: url(../img/moin-telnet.png); margin: 0 0.2em;}
-a.irc:before, a.ircs:before  {content: url(../img/moin-telnet.png); margin: 0 0.2em;}
-a.mailto:before {content: url(../img/moin-email.png); margin: 0 0.2em;}
-a.attachment:before {content: url(../img/moin-attach.png); margin: 0 0.2em;}
-a.badinterwiki:before {content: url(../img/moin-inter.png); margin: 0 0.2em;}
-a.interwiki:before {content: url(../img/moin-inter.png); margin: 0 0.2em;}
-
-li p {
-	margin: .25em 0;
-}
-
-li.gap {
-    margin-top: 0.5em;
-}
-
-dt {
-    margin-top: 0.5em;
-    font-weight: bold;
-}
-
-dd {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-dd p {
-    margin: 0.25em 0;
-}
-   
-a, img, img.drawing {
-	border: 0;
-}
-
-pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-	white-space: pre;
-	/* begin css 3 or browser specific rules - do not remove!
-	see: http://forums.techguy.org/archive/index.php/t-249849.html */
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    /* end css 3 or browser specific rules */
-}
-
-pre.comment {
-    background-color: #CCCCCC;
-    color: red;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-
-pre.comment:before {
-    content: url(../img/attention.png);
-}
-
-
-/* .comment css definition must be top of .red/.green/.blue or it won't work */
-.comment { color: #555555; background-color: #DDDDFF; }
-
-.red { background-color: #FFCCCC; border: 1px solid #daa; padding: 0 1em;  }
-.green { background-color: #CCFFCC; border: 1px solid #ada; padding: 0 1em;  }
-.blue { background-color: #CCCCFF; border: 1px solid #aad; padding: 0 1em;  }
-.yellow { background-color: #FFF29F; border: 1px solid #dd7; padding: 0 1em; }
-.orange { background-color: #FFD59B; border: 1px solid #dc7; padding: 0 1em;  }
-
-.solid { border: 2px solid #000000; padding: 2px; }
-.dashed { border: 2px dashed #000000; padding: 2px; }
-.dotted { border: 2px dotted #000000; padding: 2px; }
-
-.left { text-align: left; }
-.center { text-align: center; }
-.right { text-align: right; }
-.justify { text-align: justify; }
-
-table
-{
-	margin: 0.5em 0 0 0.5em;
-	border-collapse: collapse;
-}
-
-th, td
-{
-	padding: 0.25em 0.5em 0.25em 0.5em;
-	border: 1pt solid #ADB9CC;
-}
-
-td p {
-	margin: 0;
-	padding: 0;
-}
-/* TableOfContents macro */
-div.table-of-contents {
-    border: 1px solid #b7becc;
-    color: black;
-    background-color: #f7f6f0;
-    font-size: 80%;
-    text-align: left;
-    margin: 0.5em 0 0.5em 1em;
-    padding: 0.5em 0.75em 1em 0.5em;
-    max-width: 50%;
-    display: inline-table;
-    -moz-border-radius: 9px 0 9px 0; 
-    overflow: hidden;
-}
-div.table-of-contents ol {
-    margin: 0;
-    padding: 0 0 0 2em;
-}
-div.table-of-contents ul {
-    margin: 0;
-    list-style:none;
-}
-div.table-of-contents li {
-    margin:0;
-    padding: 0;
-}
-p.table-of-contents-heading {
-    font-weight:bold;
-    padding:0;
-    margin: 0 0 0.5em 0;
-    letter-spacing: 0.075em;
-    color: #fff;
-    background: #376a94;
-    border-bottom: 3px solid #ffbc29;
-    padding: 0.25em 0.25em 0.25em 1em;
-    margin: -0.5em -0.75em 1em -0.5em;
-    -moz-border-radius: 7px 0 0px 0; 
-}
-
-/* Navigation macro */
-table.navigation {
-    background: #fff;
-    margin: 0;
-}
-
-.footnotes div {
-	width: 5em;
-	border-top: 1pt solid gray;
-}
-
-.footnotes ol {
-	padding: 0 2em;
-	margin: 0 0 1em;
-}
-
-.footnotes li {
-}
-
-.info {
-    float: right;
-    font-size: 0.7em;
-    color: gray;
-}
-
-#pageinfo {
-    margin-top: 2em;
-}
-
-.seperator {
-    color: gray;
-}
-
-#pagebottom {clear: both;}
-
-/* standard rule ---- */
-hr {
-    height: 1pt;
-    background-color: #9C9C9C;
-    border: 0;
-}
-
-/* custom rules ----- to ---------- */
-.hr1 {height: 2pt;}
-.hr2 {height: 3pt;}
-.hr3 {height: 4pt;}
-.hr4 {height: 5pt;}
-.hr5 {height: 6pt;}
-.hr6 {height: 7pt;}
-
-/* Replacement for deprecated html 3 <u> element and html 4 <strike> */
-.u {text-decoration: underline;}
-.strike {text-decoration: line-through;}
-
-/* eye catchers */
-.warning 
-{
-	color: red;
-}
-
-.error 
-{
-	color: red;
-}
-
-strong.highlight 
-{
-	background-color: #CCE0FF;
-	padding: 1pt;
-}
-
-
-/* Recent changes */
-
-.rcrss {
-	float: right;
-	margin: 0 7px 0 14px;
-        height: 0;
-        position: relative;
-        top: 9px;
-}
-*[div="rtl"] .rcrss {
-    float: left;
-}
-.recentchanges[dir="rtl"] .rcrss {
-	float: left;
-}
-
-.recentchanges table {
-    clear: right;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-}
-
-.recentchanges td {
-    vertical-align: top;
-    border: none;
-    background: #fff;
-}
-
-
-.recentchanges .rcdaybreak td {
-    background: #eee;
-    border: none;
-    border: 1px solid #ddd;
-}
-
-.rcdaybreak td a {
-	font-size: 0.88em;
-}
-
-.rcicon1, .rcicon2 {
-	text-align: center;
-}
-
-.rcpagelink {
-	width: 33%;
-}
-
-.rctime {
-	font-size: 0.88em;
-	white-space: nowrap;
-}
-
-.rceditor {
-	white-space: nowrap;
-	font-size: 0.88em;
-}
-
-.rccomment {
-	width: 50%;
-	color: gray;
-	font-size: 0.88em;
-}
-
-
-/* User Preferences */
-
-.userpref table, .userpref td {
-	border: none;
-}
-
-/* CSS for new code_area markup used by Colorizer and ParserBase */
-
-div.codearea { /* the div makes the border */
-	margin: 0.5em 0;
-	padding: 0;
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	color: black;
-}
-
-div.codearea pre { /* the pre has no border and is inside the div */
-	margin: 0;
-	padding: 10pt;
-	border: none;
-}
-
-a.codenumbers { /* format of the line numbering link */
-	margin: 0 10pt;
-	font-size: 0.85em;
-	color: gray;
-}
-
-/* format of certain syntax spans */
-div.codearea pre span.LineNumber {color: gray;}
-div.codearea pre span.ID         {color: #000000;}
-div.codearea pre span.Operator   {color: #0000C0;}
-div.codearea pre span.Char       {color: #004080;}
-div.codearea pre span.Comment    {color: #008000;}
-div.codearea pre span.Number     {color: #0080C0;}
-div.codearea pre span.String     {color: #004080;}
-div.codearea pre span.SPChar     {color: #0000C0;}
-div.codearea pre span.ResWord    {color: #A00000;}
-div.codearea pre span.ConsWord   {color: #008080; font-weight: bold;}
-div.codearea pre span.Error      {color: #FF8080; border: solid 1.5pt #FF0000;}
-div.codearea pre span.ResWord2   {color: #0080ff; font-weight: bold;}
-div.codearea pre span.Special    {color: #0000ff;}
-div.codearea pre span.Preprc     {color: #803999;}
-
-/* for diff parser */
-table.diff .diff-added span,
-div.codearea pre span.DiffAdded   {background: #b4ddff; font-weight: bold}
-table.diff .diff-removed span,
-div.codearea pre span.DiffRemoved {background: #ffeca1; font-weight: bold;}
-table.diff .diff-changed span,
-div.codearea pre span.DiffChanged {background: #bcde9e; font-weight: bold}
-table.diff .diff-header,
-div.codearea pre span.DiffSeparator {color: #228B22; font-weight: bold}
-
-/* Search results */
-.advancedsearch {
-    border: 1pt solid #ADB9CC;
-}
-
-.advancedsearch td {
-    vertical-align: top;
-    background-color: #E7E7E7;    
-    border: 0px;
-}
-
-.advancedsearch td.searchfor {
-    font-weight: bold;
-}
-
-.advancedsearch input {
-    border: 1px solid #ADB9CC;
-    background-color: #fff;
-}
-
-.advancedsearch input[disabled] {
-    background-color: #eee;
-}
-
-.advancedsearch td.submit {
-    border-top: 1px solid #ADB9CC;
-    background-color: #fff;
-    text-align: right;
-}
-
-.advancedsearch optioni, 
-.advancedsearch select {
-    border: 1px solid #ADB9CC;
-    background-color: #fff;
-}
-
-
-.searchresults dt {
-    margin-top: 1em;
-    font-weight: normal;
-}
-
-.searchresults dd, .searchresults p {
-    font-size: 0.85em;
-}
-
-.searchresults .searchhitinfobar {
-    color: #008000;
-    margin-left: 15px;
-    margin-top: 0;
-}
-
-p.searchstats {
-    font-size: 0.8em;
-    text-align: right;
-    width: 100%;
-    background-color: #E6EAF0;
-    border-top: 1px solid #9088DC;
-    padding: 2px;
-}
-
-p.searchhint {
-    background-color: #E6EAF0;
-    border: 1px solid #9088DC;
-    padding: 2px;
-}
-
-.searchpages {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.searchpages tr, .searchpages td {
-    border: 0;
-    padding: 5px;
-    margin: 0;
-    text-align: center;
-    vertical-align: middle;
-    color: #b93a58;
-    font-weight: bold;
-    font-size: 1.05em;
-}
-
-.searchpages td a, .searchpages td a:link {
-    text-decoration: underline;
-}
-
-/* MonthCalendar css */
-
-/* days without and with pages linked to them */
-a.cal-emptyday {
-    color: #777777;
-    text-align: center;
-}
-a.cal-usedday {
-    color: #000000;
-    font-weight: bold;
-    text-align: center;
-}
-/* general stuff: workdays, weekend, today */
-td.cal-workday {
-    background-color: #DDDDFF;
-    text-align: center;
-}
-td.cal-weekend {
-    background-color: #FFDDDD;
-    text-align: center;
-}
-td.cal-today {
-    background-color: #CCFFCC;
-    border-style: solid;
-    border-width: 2pt;
-    text-align: center;
-}
-/* invalid places on the monthly calendar sheet */
-td.cal-invalidday {
-    background-color: #CCCCCC;
-}
-/* links to prev/next month/year */
-a.cal-link {
-    color: #000000;
-    text-decoration: none;
-}
-th.cal-header {
-    background-color: #DDBBFF;
-    text-align: center;
-}
-
-/* for MonthCalendar mouseover info boxes */
-TABLE.tip {
-    color: black;
-    background-color: #FF8888;
-    font-size: small;
-    font-weight: normal;
-    border-style: solid;
-    border-width: 1px;
-}
-
-TH.tip {
-    background-color: #FF4444;
-    font-weight: bold;
-    text-align: center;
-}
-
-TD.tip {
-    text-align: left;
-}
-*[dir="rtl"] TD.tip {
-    text-align: right;
-}
-
-/* end MonthCalendar stuff */
-
-#message .hint {font-style: italic;}
-#message .info {
-    float: none;
-    font-size: 1em;
-    color: black;
-}
-#message .info:before {content: url('../img/icon-info.png'); margin: 0 0.2em;}
-#message .warning:before {content: url('../img/alert.png'); margin: 0 0.2em;}
-#message .error:before {content: url('../img/icon-error.png'); margin: 0 0.2em;}
-
-
-/* admonition start */
-#content div.caution, 
-#content div.important, 
-#content div.note, 
-#content div.tip, 
-#content div.warning {
-    border: 1pt solid #E5E5E5;
-    background-color: #F9F9FF;
-    color: black;
-    
-    margin: 10pt 30pt 10pt 30pt;
-    background-repeat: no-repeat;
-    background-position: 8px 8px;
-    min-height: 64px; /*64=48+8+8 but doesn't work with IE*/
-    padding-left: 64px;
-}
- 
-#content div.caution p, 
-#content div.important p, 
-#content div.note p, 
-#content div.tip p, 
-#content div.warning p {
-    margin-top: 8px; /*to align text with bg graphic*/
-}
-
-#content div.tip { background-image: url("../img/admon-tip.png"); }
-#content div.note { background-image: url("../img/admon-note.png"); }
-#content div.important { background-image: url("../img/admon-important.png"); }
-#content div.caution { background-image: url("../img/admon-caution.png"); }
-#content div.warning { background-image: url("../img/admon-warning.png"); }
-
-/* admonition end */
-
-h1, h2, h3, h4, h5 {
-    font-family: serif;
-    font-weight: normal;
-    letter-spacing: 0.05em;
-}
-h1 {
-    color: #234764;
-    font-size: 150%;
-}
-h2 {
-    color: #366d9c;
-    font-size: 125%;
-}
-h3 {
-    color: #366d9c;
-}
-h4 {
-    color: #234764;
-}
-
-ul li {
-    list-style: url(../img/bullet.gif);
-}
-ol li {
-    list-style: decimal;
-}
-Xtext/css‘Obplist00‘fgX$versionX$objectsY$archiverT$top Ü†Ø#)*0123KLMNOPQRSTUVWXYZ[\]aU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_8https://wiki.python.org/wiki/europython/img/moin-www.png“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷oú »”456@JWNS.keysZNS.objects©789:;<=>?Ä	Ä
-ÄÄÄÄÄÄÄ©ACDEFGHIÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeX__hhaa__]Last-Modified_Strict-Transport-Security]Accept-RangesTDate^Content-LengthTEtagVApacheYimage/png_ 
-
-YnBsaXN0MDDYAQIDBAUGBwgJCw0PERMVF1ZTZXJ2ZXJcQ29udGVudC1UeXBlXUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV5Db250ZW50LUxlbmd0aFRFdGFnoQpWQXBhY2hloQxZaW1hZ2UvcG5noQ5fEB1UaHUsIDAzIE1hciAyMDExIDEwOjQzOjE1IEdNVKEQXxAjbWF4LWFnZT0zMTUzNjAwMDsgaW5jbHVkZVN1YkRvbWFpbnOhElVieXRlc6EUXxAdTW9uLCAyNiBOb3YgMjAxOCAwNDoxNzo1NCBHTVShFlM5MjihGF8QGSIzZWI3Zi0zYTAtNDlkOTFiMjViNzZjMCIACAAZACAALQA7AFcAZQBqAHkAfgCAAIcAiQCTAJUAtQC3AN0A3wDlAOcBBwEJAQ0BDwAAAAAAAAIBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAEr_Thu, 03 Mar 2011 10:43:15 GMT_#max-age=31536000; includeSubDomainsUbytes_Mon, 26 Nov 2018 04:17:54 GMTS928_"3eb7f-3a0-49d91b25b76c0"“+,^__NSMutableDictionary£^`/\NSDictionary“+,bc_NSHTTPURLResponse£de/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—hi_WebResourceResponseÄ    # - 2 7 W ] x ö º ø · ‰/25Wy|~ÄÇÑÜàäåçèëìïú§∞≤¥∂Òˆ
-%')08CMOQSUWY[]_ikmoqsuwy{}Ñëö®ƒ“◊ÊÎÚ¸  FLlpåëß´∏Ω—’È˜	"             j              $_8https://wiki.python.org/wiki/europython/img/moin-www.pngO†âPNG
-
-   IHDR         Ûˇa   bKGD ˇ ˇ ˇ†Ωßì   	pHYs     öú   tIME’,Êﬁè   5tEXtComment (c) 2004 Jakub Steiner
-
-Created with The GIMPêŸão  ÏIDAT8À≠ì]h[eáü˜ú˜úcì4iõÊ£çm÷–¢,∏u≤»ƒ´)®0oî)›Ee8oÑ°†∑R≈˚]àGAƒÈçLÜ7≥0µ≥ñçv+ÆÎ\?≥ú,Mrísíú◊ŸƒÌ÷Á˙ˇ{.˛¸~Ç8˛ﬁÏ)‡-] ˝
-,Â˚•X–tÌÏ‹Ã‘ﬁã˚¡˜øú4uÌ«â±d‚»Å4c©(À¢\o≤∂i≥∏≤…çç¬e!ƒ…πô©´ˇºˆÓÁπ`∏Á∑Wé'‚îÎMÏùd(=˝‡ÿ§QV∂9?ør!ûΩ'ë —hËßÁü…ä'2îäyG≥DápZmÚõÎHﬂCÎ6y.ó°Î´ËÖK◊œ Oho~¯’G…x¯hnCÛÈ»hCJLC∞$âh/CÒ±æ πÏ£§áéºÒ¡Ÿi -	ú<ú•R.r«ﬁáR‡+@hﬂc∑‘‡˚ãÀ\ò_$b)ˆèº
- kN;ñNˆ≥p£@f"éØ˛˝lΩR‚©…,BîRlÔﬁ°’l2ã –Z^G≥,-ßRoa◊<∑KÕÒÍ6B¸£BêàEπ∫zÀê  R◊5ø⁄hi¡÷!iQhR4L:]üV©√dªçÎzÙÜÇ8é√æTåB”(HC”Ú∑∂ä√á∆ìdFÜ∏ΩπÕ¸⁄&M/»ßﬂ^¡]ﬁ~˘ µZç•k7°7;Ä¶∫›sK´[xæ =í‚ÿ°ªÖw´™Æ‡vŸ«∂m™’*èÙßX]œ|†/˝|Ó¸xÓ•”B◊ÕH–†«‘˘eqôÂº¢÷pŸk∏Ï9.πù¬û«VŸÁ⁄⁄ŒØs3SÔ‹/R•P<qÒ≤ˇùÔ√ìè%¯·Jï≤g‚u∫∏^ÀlT⁄\˙c≠,Ñ8ı–éM¸˙hfd6È3œ$IÜ±,ß’f◊ÆÁ≠<[;≈ÎBó«⁄¬=˙∆ÃNúû’≠¿ãË≤ÑP Ô®N{]	Ì≥Ø?ô>√ˇÕﬂpl7˜1⁄ï    IENDÆB`ÇYimage/png‘ !"#Obplist00‘fgX$versionX$objectsY$archiverT$top Ü†Ø#)*0123KLMNOPQRSTUVWXYZ[\]aU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_6https://wiki.python.org/wiki/europython/img/bullet.gif“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷{’ »”456@JWNS.keysZNS.objects©789:;<=>?Ä	Ä
-ÄÄÄÄÄÄÄ©ACDEFGHIÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeX__hhaa__]Last-Modified_Strict-Transport-Security]Accept-RangesTDate^Content-LengthTEtagVApacheYimage/gif_ 
-
-YnBsaXN0MDDYAQIDBAUGBwgJCw0PERMVF1ZTZXJ2ZXJcQ29udGVudC1UeXBlXUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV5Db250ZW50LUxlbmd0aFRFdGFnoQpWQXBhY2hloQxZaW1hZ2UvZ2lmoQ5fEB1UaHUsIDAzIE1hciAyMDExIDEwOjQzOjE1IEdNVKEQXxAjbWF4LWFnZT0zMTUzNjAwMDsgaW5jbHVkZVN1YkRvbWFpbnOhElVieXRlc6EUXxAdTW9uLCAyNiBOb3YgMjAxOCAwNDoxNzo1NCBHTVShFlI1NKEYXxAYIjNlYjU3LTM2LTQ5ZDkxYjI1Yjc2YzAiAAgAGQAgAC0AOwBXAGUAagB5AH4AgACHAIkAkwCVALUAtwDdAN8A5QDnAQcBCQEMAQ4AAAAAAAACAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAABKQ==_Thu, 03 Mar 2011 10:43:15 GMT_#max-age=31536000; includeSubDomainsUbytes_Mon, 26 Nov 2018 04:17:54 GMTR54_"3eb57-36-49d91b25b76c0"“+,^__NSMutableDictionary£^`/\NSDictionary“+,bc_NSHTTPURLResponse£de/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—hi_WebResourceResponseÄ    # - 2 7 W ] x ö º ø · ‰/25Wy|~ÄÇÑÜàäåçèëìïú§∞≤¥∂ÔÙˇ#%'.6AKMOQSUWY[]gikmoqsuwy{Çèò¶¬–’‰È˙˛DJjmàç£ß¥πÕ—ÂÛ             j               _6https://wiki.python.org/wiki/europython/img/bullet.gifO6GIF89a	 	 Ä  ˇˇˇ'J!˘   ,    	 	  Ñèôaº≠úÉ`V™≤* ;Yimage/gif‘%&'O¬bplist00‘noX$versionX$objectsY$archiverT$top Ü†Ø!#)*0123OPQRSTUVWXYZ[\]^_`abcdeiU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄ ÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_6https://wiki.python.org/wiki/europython/css/screen.css“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷É˝ »”456BNWNS.keysZNS.objects´789:;<=>?@AÄ	Ä
-ÄÄÄÄÄÄÄÄÄ´CEFGHIJKLMÄÄÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeTEtag]Last-Modified_Strict-Transport-SecurityX__hhaa__]Accept-RangesTDate_Content-Encoding^Content-LengthTVaryVApacheXtext/css_"3eb35-142c-4c2948c70e580"_Sat, 16 Jun 2012 10:39:34 GMT_#max-age=31536000; includeSubDomains_\
-
-YnBsaXN0MDDaAQIDBAUGBwgJCgsNDxETFRcZGx1WU2VydmVyXENvbnRlbnQtVHlwZVRWYXJ5XUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV8QEENvbnRlbnQtRW5jb2RpbmdeQ29udGVudC1MZW5ndGhURXRhZ6EMVkFwYWNoZaEOWHRleHQvY3NzoRBfEA9BY2NlcHQtRW5jb2RpbmehEl8QHVNhdCwgMTYgSnVuIDIwMTIgMTA6Mzk6MzQgR01UoRRfECNtYXgtYWdlPTMxNTM2MDAwOyBpbmNsdWRlU3ViRG9tYWluc6EWVWJ5dGVzoRhfEB1Nb24sIDI2IE5vdiAyMDE4IDA0OjE3OjU0IEdNVKEaVGd6aXChHFQxNDA3oR5fEBoiM2ViMzUtMTQyYy00YzI5NDhjNzBlNTgwIgAIAB0AJAAxADYARABgAG4AcwCGAJUAmgCcAKMApQCuALAAwgDEAOQA5gEMAQ4BFAEWATYBOAE9AT8BRAFGAAAAAAAAAgEAAAAAAAAAHwAAAAAAAAAAAAAAAAAAAWM=Ubytes_Mon, 26 Nov 2018 04:17:54 GMTTgzipT1407_Accept-Encoding“+,fg_NSMutableDictionary£fh/\NSDictionary“+,jk_NSHTTPURLResponse£lm/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—pq_WebResourceResponseÄ    # - 2 7 [ a | û ¿ √ Â Ë
-369[}ÄÇÑÜàäåéêëìïóô†®¥∂∏∫Û¯')+2:EQSUWY[]_acegsuwy{}ÅÉÖáâãíü§≤Œ◊ÂÍ˝!>^Ñ‰Í
-&+AERWkoÉë£¶º             r              æ_6https://wiki.python.org/wiki/europython/css/screen.cssO,html {
-    height: 100%;
-    font-size: 103%;
-    font-family: Arial,Verdana,Geneva,"Bitstream Vera Sans",Helvetica,sans-serif;
-}
-body {
-    position: relative;
-    min-height: 100%;
-    line-height: 1.4;
-}
-form#searchform {
-    float: right;
-    margin: 16px 4% 0 0;
-}
-form#searchform input#searchinput {
-    border: 1px solid #c4cccc;
-    font-size: 88%;
-    vertical-align: middle;
-}
-form#searchform input#fullsearch,
-form#searchform input#titlesearch {
-    border-top: 1px solid #c4cccc;
-    border-left: 1px solid #c4cccc;
-    border-bottom: 1px solid #6f7777;
-    border-right: 1px solid #6f7777;
-    background: #f8f7f7 url(../img/button-on-bg.png) no-repeat;
-    font-weight: bold;
-    color: #223344;
-    font-size: 90%;
-    text-transform: lowercase;
-    vertical-align: middle;
-}
-div#header {
-    background: #f7f7f7 url(../img/header-bg2.png) repeat-x;
-    border-bottom: 1px solid #999;
-    height: 84px;
-    padding: 1px 0;
-    position: relative;
-}
-div#logo {
-    float: left;
-    margin: 10px 0 0 3%;
-    height: 71px;
-    width: 211px;
-    text-align: center;
-}
-div#logo a {
-    outline: none;
-}
-div#sidebar {
-    float: left;
-    width: 13.2em;
-    padding: 0 0.4em 0 1.4em; 
-    margin: 19px 0 0 3%;
-    color: #4b5a6a;
-    font-size: 75%;
-}
-div#sidebar h1 {
-    font-weight: bold;
-    font-size: 103%;
-    color: #4b5a6a;
-    font-family: sans-serif;
-    margin: 0.5em;
-}
-div#sidebar div.sidepanel:first-child h1 {
-    display: none;
-}
-div#sidebar ul#navibar {
-    padding: 0;
-    margin: 0;
-}
-div#sidebar ul#navibar li {
-    margin: 0;
-    padding: 0;
-    border: none;
-    list-style: none;
-    display: block;
-    font-variant: small-caps;
-}
-div#sidebar ul#navibar li a {
-    display: block;
-    border: 1px solid #dadada;
-    margin: 4px 0 0 0;
-    background: #f4f4f4 url(../img/nav-off-bg.png) 100% 0 no-repeat;
-    color: #4b5a6a;
-    font-family: Verdana,Geneva,"Bitstream Vera Sans",Helvetica,sans-serif;
-    padding: 2px 4px;
-    overflow: hidden;
-    white-space: nowrap;
-}
-div#sidebar ul#navibar li.current a {
-    background: #f4f4f4 url(../img/nav-on-bg.png) 100% 0 no-repeat;
-    border-left: 3px solid #ffdb4c;
-    color: #000;
-}
-div#sidebar ul {
-    margin: 0;
-    padding: 0;
-}
-div#sidebar ul li {
-    list-style: url(../img/bullet.gif);
-    margin: 2px 0 2px 2em;
-    padding: 0;
-}
-div#sidebar ul li a {
-    color: #3c4b7b;
-    text-decoration: none;
-}
-div#sidebar ul li a:hover {
-    color: #000;
-    text-decoration: underline;
-}
-div#sidebar select {
-    width: 100%;
-    font-size: 12px;
-}
-div#content {
-    margin: 0 1.5em 0 3%;
-    padding: 12px 0 0 16.5em;
-    font-size: 86%;
-    line-height: 1.5;
-}
-div#footer {
-    clear: both;
-    margin: 1em 1.5em 0 242px;
-    border-top: 1px solid #ddd;
-    padding: 0.5em 0;
-}
-ul#credits {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 12px;
-    color: #999;
-}
-ul#credits a {
-    color: #666;
-    text-decoration: none;
-}
-ul#credits a:hover {
-    text-decoration: underline;
-}
-ul#credits li {
-    display: inline;
-    list-style: none;
-    margin: 1em;
-}
-#locationline {
-    font-size: 86%;
-    position: absolute;
-    bottom: 4px;
-    left: 3%;
-    margin-left: 16.5em;
-    background: url(../img/bullet.gif) no-repeat 0 50%;
-    padding: 0 0 0 12px;
-}
-ul#pagetrail,
-#locationline ul {
-    margin: 0;
-    padding: 0;
-}
-ul#pagetrail li,
-#locationline ul li {
-    margin: 0 1em 0 0;
-    padding: 0;
-    display: inline;
-    list-style: none;
-    font-size: 110%;
-}
-ul#pagetrail li a,
-#locationline ul li a {
-    color: #3A4969;
-    text-decoration: none;
-}
-ul#pagetrail li a:hover,
-#locationline ul li a:hover {
-    text-decoration: underline;
-}
-#locationline ul li a.backlink {
-    font-weight: bold;
-}
-ul#pagetrail {
-    position: absolute;
-    bottom: -1.5em;
-    left: 3%;
-    margin-left: 16.5em;
-    font-size: 86%;
-}
-ul#pagetrail li {
-    font-size: 90%;
-    padding: 0 0 0 12px;
-    margin: 0;
-    background: url(../img/bullet.gif) 1px 50% no-repeat;
-}
-#message {
-    position: absolute;
-    top: 0.5em;
-    left: 242px;
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 0.5em;
-    z-index: 10000;
-    font-size: 12px;
-    margin: 0 0.75em 0 0;
-}
-#message table {
-    max-width: 100%;
-    border: none;
-}
-#message table td {
-    border: none;
-}
-#message p {
-    margin: 0;
-}
-
-#message input {
-    width: 100%;
-}
-#message .buttons input {
-    width: auto;
-}
-#editor {
-    padding: 6em 0 0 0;
-    margin: 0.5em;
-} 
-#editor textarea {
-    display: block;
-    font-size: 100%;
-    width: 100%;
-}
-#editor-comment {
-    display: block;
-    width: 100%;
-}
-div#textcha {
-    padding: 0.25em 1em;
-    background: #fff29f;
-    border: 1px solid #eee18e;
-    margin: 0.25em 0;
-    color: #630;
-}
-
-#pageinfo {
-    margin: 2em 2em 0.25em 0;
-}
-
-#star a {
-    display: block;
-    overflow: hidden;
-    width: 16px;
-    height: 16px;
-    text-indent: 16px;
-    background: url('../img/star_off.png') no-repeat 50% 50%;
-    position: absolute;
-    top: 64px;
-    left: 3%;
-    margin-left: 17.5em;
-    margin-top: -0.2em;
-}
-#star a.unsubscribe {
-    background-image: url('../img/star_on.png');
-}
-
-ul#timings {
-    font-size: 50%;
-    color: #999;
-}
-‘)*+Obplist00‘fgX$versionX$objectsY$archiverT$top Ü†Ø#)*0123KLMNOPQRSTUVWXYZ[\]aU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_<https://wiki.python.org/wiki/europython/img/button-on-bg.png“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷èT »”456@JWNS.keysZNS.objects©789:;<=>?Ä	Ä
-ÄÄÄÄÄÄÄ©ACDEFGHIÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeX__hhaa__]Last-Modified_Strict-Transport-Security]Accept-RangesTDate^Content-LengthTEtagVApacheYimage/png_ 
-
-YnBsaXN0MDDYAQIDBAUGBwgJCw0PERMVF1ZTZXJ2ZXJcQ29udGVudC1UeXBlXUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV5Db250ZW50LUxlbmd0aFRFdGFnoQpWQXBhY2hloQxZaW1hZ2UvcG5noQ5fEB1UaHUsIDAzIE1hciAyMDExIDEwOjQzOjE1IEdNVKEQXxAjbWF4LWFnZT0zMTUzNjAwMDsgaW5jbHVkZVN1YkRvbWFpbnOhElVieXRlc6EUXxAdTW9uLCAyNiBOb3YgMjAxOCAwNDoxNzo1NCBHTVShFlMyNjKhGF8QGSIzZWI2Mi0xMDYtNDlkOTFiMjViNzZjMCIACAAZACAALQA7AFcAZQBqAHkAfgCAAIcAiQCTAJUAtQC3AN0A3wDlAOcBBwEJAQ0BDwAAAAAAAAIBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAEr_Thu, 03 Mar 2011 10:43:15 GMT_#max-age=31536000; includeSubDomainsUbytes_Mon, 26 Nov 2018 04:17:54 GMTS262_"3eb62-106-49d91b25b76c0"“+,^__NSMutableDictionary£^`/\NSDictionary“+,bc_NSHTTPURLResponse£de/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—hi_WebResourceResponseÄ    # - 2 7 W ] x ö º ø · ‰/25Wy|~ÄÇÑÜàäåçèëìïú§∞≤¥∂ı˙ )+-4<GQSUWY[]_acmoqsuwy{}Åàïû¨»÷€ÍÔˆ $JPptêï´Øº¡’ŸÌ˚&             j              (_<https://wiki.python.org/wiki/europython/img/button-on-bg.pngOâPNG
-
-   IHDR   å      ÄZ”Ù   sBIT€·O‡   	pHYs    “›~¸    tEXtSoftware Macromedia Fireworks MXªë*$   tEXtCreation Time 12/06/04gÓm   [IDATxúÌ’—	 A—∏lˇÖ⁄Ñ◊Åø{Û*ÑhÕLÙo7Iwøé°ÕMRUØchsìús^«–∆%XÄ%¯ì \Ä%xÓ \Ä%xÓ \Ä%X¿Zq6ÑÎeê    IENDÆB`Ç‘-./Obplist00‘fgX$versionX$objectsY$archiverT$top Ü†Ø#)*0123KLMNOPQRSTUVWXYZ[\]aU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_:https://wiki.python.org/wiki/europython/img/header-bg2.png“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷ò_ »”456@JWNS.keysZNS.objects©789:;<=>?Ä	Ä
-ÄÄÄÄÄÄÄ©ACDEFGHIÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeX__hhaa__]Last-Modified_Strict-Transport-Security]Accept-RangesTDate^Content-LengthTEtagVApacheYimage/png_ 
-
-YnBsaXN0MDDYAQIDBAUGBwgJCw0PERMVF1ZTZXJ2ZXJcQ29udGVudC1UeXBlXUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV5Db250ZW50LUxlbmd0aFRFdGFnoQpWQXBhY2hloQxZaW1hZ2UvcG5noQ5fEB1UaHUsIDAzIE1hciAyMDExIDEwOjQzOjE1IEdNVKEQXxAjbWF4LWFnZT0zMTUzNjAwMDsgaW5jbHVkZVN1YkRvbWFpbnOhElVieXRlc6EUXxAdTW9uLCAyNiBOb3YgMjAxOCAwNDoxNzo1NCBHTVShFlMyNDehGF8QGCIzZWI0Ny1mNy00OWQ5MWIyNWI3NmMwIgAIABkAIAAtADsAVwBlAGoAeQB+AIAAhwCJAJMAlQC1ALcA3QDfAOUA5wEHAQkBDQEPAAAAAAAAAgEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAASo=_Thu, 03 Mar 2011 10:43:15 GMT_#max-age=31536000; includeSubDomainsUbytes_Mon, 26 Nov 2018 04:17:54 GMTS247_"3eb47-f7-49d91b25b76c0"“+,^__NSMutableDictionary£^`/\NSDictionary“+,bc_NSHTTPURLResponse£de/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—hi_WebResourceResponseÄ    # - 2 7 W ] x ö º ø · ‰/25Wy|~ÄÇÑÜàäåçèëìïú§∞≤¥∂Û¯')+2:EOQSUWY[]_akmoqsuwy{}Üìú™∆‘ŸËÌÙ˛"HNnrçí®¨πæ“÷Í¯
-#             j              %_:https://wiki.python.org/wiki/europython/img/header-bg2.pngO˜âPNG
-
-   IHDR      R   ¯±2˛   sBIT€·O‡   	pHYs    “›~¸    tEXtSoftware Macromedia Fireworks MXªë*$   tEXtCreation Time 12/05/04u[¬¸   LIDATxúc|˘Ú%*`b¿ XÑX1Ö—â3ãXil<¶≠=DS±èM’–±ë8„…∂ë∆∆!V©i<˝m ë[b ∑w¿åﬂÎ    IENDÆB`Ç‘123Obplist00‘fgX$versionX$objectsY$archiverT$top Ü†Ø#)*0123KLMNOPQRSTUVWXYZ[\]aU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_:https://wiki.python.org/wiki/europython/img/nav-off-bg.png“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷†U »”456@JWNS.keysZNS.objects©789:;<=>?Ä	Ä
-ÄÄÄÄÄÄÄ©ACDEFGHIÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeX__hhaa__]Last-Modified_Strict-Transport-Security]Accept-RangesTDate^Content-LengthTEtagVApacheYimage/png_ 
-
-YnBsaXN0MDDYAQIDBAUGBwgJCw0PERMVF1ZTZXJ2ZXJcQ29udGVudC1UeXBlXUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV5Db250ZW50LUxlbmd0aFRFdGFnoQpWQXBhY2hloQxZaW1hZ2UvcG5noQ5fEB1UaHUsIDAzIE1hciAyMDExIDEwOjQzOjE1IEdNVKEQXxAjbWF4LWFnZT0zMTUzNjAwMDsgaW5jbHVkZVN1YkRvbWFpbnOhElVieXRlc6EUXxAdTW9uLCAyNiBOb3YgMjAxOCAwNDoxNzo1NCBHTVShFlMzMTChGF8QGSIzZWI2My0xMzYtNDlkOTFiMjViNzZjMCIACAAZACAALQA7AFcAZQBqAHkAfgCAAIcAiQCTAJUAtQC3AN0A3wDlAOcBBwEJAQ0BDwAAAAAAAAIBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAEr_Thu, 03 Mar 2011 10:43:15 GMT_#max-age=31536000; includeSubDomainsUbytes_Mon, 26 Nov 2018 04:17:54 GMTS310_"3eb63-136-49d91b25b76c0"“+,^__NSMutableDictionary£^`/\NSDictionary“+,bc_NSHTTPURLResponse£de/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—hi_WebResourceResponseÄ    # - 2 7 W ] x ö º ø · ‰/25Wy|~ÄÇÑÜàäåçèëìïú§∞≤¥∂Û¯')+2:EOQSUWY[]_akmoqsuwy{}Üìú™∆‘ŸËÌÙ˛"HNnréì©≠∫ø”◊Î˘$             j              &_:https://wiki.python.org/wiki/europython/img/nav-off-bg.pngO6âPNG
-
-   IHDR   ˙      Ùo±|   sBIT|dà   	pHYs  
-  
-B¨4ò    tEXtSoftware Macromedia Fireworks MXªë*$   tEXtCreation Time 12/06/04gÓm   äIDATxúÌ⁄1√ E¡u‰€ré
--©R)ë]X÷öôÓw€<—∞ç1F è∂˜ﬁÔæ∏ÿÎÓÄÎ	 tXÄ–!°ZÎﬂ=:$TJ˘ä{ﬁ3°CRgb:$v4v°Cbµ÷(•¸‹Bá§éF!tHÈL‰[kÕ_wx8/:,@Ë∞ °√ÑxQñ2]Ú|¢¥    IENDÆB`Ç‘567Obplist00‘fgX$versionX$objectsY$archiverT$top Ü†Ø#)*0123KLMNOPQRSTUVWXYZ[\]aU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_9https://wiki.python.org/wiki/europython/img/nav-on-bg.png“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷™ »”456@JWNS.keysZNS.objects©789:;<=>?Ä	Ä
-ÄÄÄÄÄÄÄ©ACDEFGHIÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeX__hhaa__]Last-Modified_Strict-Transport-Security]Accept-RangesTDate^Content-LengthTEtagVApacheYimage/png_ 
-
-YnBsaXN0MDDYAQIDBAUGBwgJCw0PERMVF1ZTZXJ2ZXJcQ29udGVudC1UeXBlXUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV5Db250ZW50LUxlbmd0aFRFdGFnoQpWQXBhY2hloQxZaW1hZ2UvcG5noQ5fEB1UaHUsIDAzIE1hciAyMDExIDEwOjQzOjE1IEdNVKEQXxAjbWF4LWFnZT0zMTUzNjAwMDsgaW5jbHVkZVN1YkRvbWFpbnOhElVieXRlc6EUXxAdTW9uLCAyNiBOb3YgMjAxOCAwNDoxNzo1NCBHTVShFlMzNTmhGF8QGSIzZWI0MS0xNjctNDlkOTFiMjViNzZjMCIACAAZACAALQA7AFcAZQBqAHkAfgCAAIcAiQCTAJUAtQC3AN0A3wDlAOcBBwEJAQ0BDwAAAAAAAAIBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAEr_Thu, 03 Mar 2011 10:43:15 GMT_#max-age=31536000; includeSubDomainsUbytes_Mon, 26 Nov 2018 04:17:54 GMTS359_"3eb41-167-49d91b25b76c0"“+,^__NSMutableDictionary£^`/\NSDictionary“+,bc_NSHTTPURLResponse£de/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—hi_WebResourceResponseÄ    # - 2 7 W ] x ö º ø · ‰/25Wy|~ÄÇÑÜàäåçèëìïú§∞≤¥∂Ú˜&(*19DNPRTVXZ\^`jlnprtvxz|~Öíõ©≈”ÿÁÏÛ˝!GMmqçí®¨πæ“÷Í¯
-#             j              %_9https://wiki.python.org/wiki/europython/img/nav-on-bg.pngOgâPNG
-
-   IHDR   ˙      Ùo±|   sBIT|dà   	pHYs  
-  
-B¨4ò    tEXtSoftware Macromedia Fireworks MXªë*$   tEXtCreation Time 12/06/04gÓm   ªIDATxúÌŸ;@PÖ·±TÇ∞Ç∞Bç–(ØJ"í)E∆˝øÓt”úÃ}h!Ä_Kóe˘z /KUıÎ º,Mí‰Î ºåçDÄ¢ÕÛ,Yñô˘I◊uÂ’phö&…Û‹Ãw∫mEú«Qä¢0ÛE˜}ßËÄc√0HYñf·é∏÷˜ΩTUeÊﬂkÄS]◊I]◊fæc£µm+M”ò˘Iè„‡é¸Gw ›ÅPt à¿	≤y@qÑ¡t˚    IENDÆB`Ç‘9:;#O bplist00‘fgX$versionX$objectsY$archiverT$top Ü†Ø#)*0123KLMNOPQRSTUVWXYZ[\]aU$null›	
- !"___nsurlrequest_proto_prop_obj_6___nsurlrequest_proto_prop_obj_3R$2___nsurlrequest_proto_prop_obj_0R$3___nsurlrequest_proto_prop_obj_4V$class___nsurlrequest_proto_prop_obj_1R$4R$0___nsurlrequest_proto_prop_obj_5___nsurlrequest_proto_prop_obj_2R$1ÄÄÄ	ÄÄÄÄ Ä”$% '(WNS.base[NS.relativeÄ ÄÄ_;https://wiki.python.org/wiki/europython/img/python-logo.gif“+,-.Z$classnameX$classesUNSURL¢-/XNSObject#A¿’÷∏ø »”456@JWNS.keysZNS.objects©789:;<=>?Ä	Ä
-ÄÄÄÄÄÄÄ©ACDEFGHIÄÄÄÄÄÄÄÄÄÄVServer\Content-TypeX__hhaa__]Last-Modified_Strict-Transport-Security]Accept-RangesTDate^Content-LengthTEtagVApacheYimage/gif_
-
-YnBsaXN0MDDYAQIDBAUGBwgJCw0PERMVF1ZTZXJ2ZXJcQ29udGVudC1UeXBlXUxhc3QtTW9kaWZpZWRfEBlTdHJpY3QtVHJhbnNwb3J0LVNlY3VyaXR5XUFjY2VwdC1SYW5nZXNURGF0ZV5Db250ZW50LUxlbmd0aFRFdGFnoQpWQXBhY2hloQxZaW1hZ2UvZ2lmoQ5fEB1UaHUsIDAzIE1hciAyMDExIDEwOjQzOjE1IEdNVKEQXxAjbWF4LWFnZT0zMTUzNjAwMDsgaW5jbHVkZVN1YkRvbWFpbnOhElVieXRlc6EUXxAdTW9uLCAyNiBOb3YgMjAxOCAwNDoxNzo1NCBHTVShFlQyNTQ5oRhfEBkiM2ViM2YtOWY1LTQ5ZDkxYjI1Yjc2YzAiAAgAGQAgAC0AOwBXAGUAagB5AH4AgACHAIkAkwCVALUAtwDdAN8A5QDnAQcBCQEOARAAAAAAAAACAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAABLA==_Thu, 03 Mar 2011 10:43:15 GMT_#max-age=31536000; includeSubDomainsUbytes_Mon, 26 Nov 2018 04:17:54 GMTT2549_"3eb3f-9f5-49d91b25b76c0"“+,^__NSMutableDictionary£^`/\NSDictionary“+,bc_NSHTTPURLResponse£de/_NSHTTPURLResponse]NSURLResponse_NSKeyedArchiver—hi_WebResourceResponseÄ    # - 2 7 W ] x ö º ø · ‰/25Wy|~ÄÇÑÜàäåçèëìïú§∞≤¥∂Ù˘(*,3;FPRTVXZ\^`blnprtvxz|~Äáîù´«’⁄ÈÓıˇ'MSsxîôØ≥¿≈Ÿ›Òˇ*             j              ,_;https://wiki.python.org/wiki/europython/img/python-logo.gifO	ıGIF89a” G ˜  ˇˇˇˇ˚Ú˜˜ˇˇ˜ÂˆııÛÚÚÔÔÔˇÌ»ÒÏ⁄ÎÍÍÍÍÍıË∆ˇÌ`ÊÊÊÒÂ√ˇ‰¨ˇÎ^ıÊ¶ı„òˇÊYˇ‡ó‹·Áˆﬂ†ˇ„Tﬁﬁﬁ˜ﬁí¯·n›››˙‚bˇ‡R◊ﬁ„ÕﬂÓˆÿóıŸçı⁄Çˇ÷{ˇ÷Éˇ€L÷÷÷˜‘{ˇÿIˇ”v¯’h˜“Ñ˘÷[˚’Oˇ’Dˇœj∆‘‡ˇ–@ˇÕW˜Õt¬—ﬁ˚ŒG¯ÕWˇÃ;ÃÃÃ¯«b˚»@¸≈9ˇ≈2≈≈≈˘¬D∞«Ÿ˘¿I¬¬¬˚¿7˙æ@˝æ.ˇº)ΩΩΩˇ∏-ˇµ1ˇµ!õø›õΩ⁄°∫œù∫—µµµ¨¨¨êØ…ÇØ‘®®®Ç≠—£££® °††Ä¶∆~•∆Ä£¿}°øû∏ôôôr†≈ëëëpñµêèèdïΩdëµZëødé≤ÜÜÜRçΩ~~~IàªDâ¿PÖ∞IÖ∂CÖª8Ö√CÉ∂8ÇæI¨P|°C≤uuu8∫B}Æ8|µCyß7yØlll7v´Bs•<rû7s•fff6mú7jîˇˇˇ                                                                                                                                                                                                                                                                                                                                                                                          !˘ Å ,    ” G  ˇ 	H∞†¡É*\»∞°√á#JúH±¢≈ã3j‹»±£«è CäI≤§…ì(S™\…≤•Àó0c úI≥¶Õõ8sÍ‹…≥ßœü@É
-çàÉKCg“¿fç9PÂ®£≈CRÑe¸¯Az’e6o¬⁄ãß¨û≥z»t-òuÎZñM¬“ô;ñ,⁄>x˜ºÿñÎ^îhﬁ§˘ `
-Ÿ≤eÒ*˛‘/¡æ7•HñHäÅ@
-§ƒ´  vﬂU‹áèœVÊ¯9ßfÅRÇlÚ˙eÿ(û?Ñ∆3Ôüﬂ>qh]m∞u‰ÅR2®Ì2Ïõ)K‹ N¨¯7û¬µ≤÷Í∏fÌÔ1ÈˇFL⁄˙uûŸâ≥Âû<ÏuEü≠n˛O·€›∫FŒ?ß˙÷≤F<Ò(dD·W{5ÄÉÅFòÅ"ÿcÄÂ\|”ï  Ä¿ §®ADFú1‹ã\$Xê™uGêÉÅ<Ò‚ãO‘óX·¢VyX!£Ap±£sëPNπcå:U·‹á„QÁ€à$ \ &ı†öVsîQÜîg…Ñ·®„í~Ù¯¶=(Igõıê«pj˛©ï3
-ö&eÍü75—∆£oÃEó|zà¯â]¶(Ê%î CF˘É· hÎÈßv•óëV ˇÖ¡ú~†Jê	Ç9êÇrAPmï·Xz˙·ÎMi@*i]°ı÷áyòvπ)ßù÷¿P[=î^∂>¬iéπ˙†V∫‰ƒp
-‘¿ôNÑ´VÌÜÓcÛ ÙCWæ"y ˛≠¥‘vÍÇ,d\™g–´Í∑¨ñZo m9yê†vÊà&BsÊ!£∏}>Sêä5^oı˝«t ¿1Ñ`∞∑ÊG*ƒ0ﬂÿ∞º7wª0A`ê;ª50úƒ3¨Mf»%û]Ûı˚/ 4®–i	ªC6ºº≥√ZILÛ÷Õ[¥Œ6
-4ß≠&W∂@CÇÅÛ—y¸íá"Ô∆Ôñó˛ªSWˇ√7Ë†ı⁄ÅWÒ¡qÁ<ˆùkü-Pr¢g¬Å,vŒ2IJ«æZ>À%âq–Ä@+ˇ¯;û–p«~M∏ÿ#>ê„cN≠oØn;LX⁄ùX0 ¸ƒ∞Ä
-($œÚÈ<4Ø:BÄí≠;‹ñÀn∂V∂‚ûêˆñyKÀÓ{Gpp‚˘'j0’V3ﬂ<œØZ´Ù–+{Õ◊œ‰ªÁOy˜ÖÎüK‹∞π,·°@ﬂ˘R4Åî©å}Ì‹˚x Ñ¯Ìp¯Ûû˝lgΩ⁄Ÿ*=È:HœÙ¿Ô±dú√C"†¿Ù•»Å+≥öÈ&XX∞U√âóÎ¶WêÍeêvÙÉ◊ˇ2$;ïPÄ-π¬»ŒRÛ)P}ÛõiXÑ‹p Á“J#∆Cráÿ”YÎ
-"4-ÊÆ~pì	‚É=`Oìò˙¡LêE»#Æ(ê3QÓNcLıÓ6ÓäHnö]œ(?ú‘a:x¿K‚∏):öŒéÔÀcáp-≠T,fZ·ñ@®ÄÆÉni”J∆’∏EIÇÚÀ”((òÂ.ì\†ß∆æKR1èI A'—‰R%ÄV^(Hïá'¨2	0B[0w¶O2cÆzıÃ —ã¥‘`8c"Üﬁ‰íÅ0Ñ†/3©…$ °!m9ö^tÜn‰]t⁄ëªÜ3ˇáX—œ @à	Œî5Iâ
-=îõ	]¬8‹·°wƒó^ò2Å’‡¢:»®FÖ¿—éZû‹¡Åv‘ÃÑ$iI^pBfÇëzÚü	®@é©(≠x¡F≥
-˚¶èÙ• @≈ÅP	Gê@j‰Ñ:≥åò`®ˆ¸ÀB¶eI˜ΩØÇÈ`E*’óÃ±™Sl^±:≠Nd•˙ÎjN*Z∫”ŸQÅ&+bVâd'êj≠	Î¯æx&I ]3H=1Ø5iÅÚdV¿3$HY%RWàÑ yà*bgí)b2ì/8¿éêÑ∂ê9i(7õ¨ìùIàmr`ë “&ƒO‡ÇîÊ@T÷¬ƒ5¯,Å[$”"zÍ≠Bä≈$g˙ñ'8Ñ@Mas*B(ëîÅ
-N‡Ós«KﬁÚö˜ºËMØz◊À^Ü ©çØ|€€ﬁ˜ ®≈ﬁ}ìJﬂÚ¿æIÕØÄÛ{ﬂ˛≤¿¯-^Ã‡'Ä¿Ò5p^ˇ_3∏Œp\º˘J∏´.@~Lb√˜√ÒÄW¨_£8≈ﬁØåì˙ﬂˇæÿø5Œ±éw|„˚¯«@≤êáL‰"˘»HN≤íó‹„Ä  ;            1   <   Z   i   Ä   í   ®   Æ   ‹   ›  T.  T8  TC  TL  Tb  \b  \ï  …‘  …Ì  …ˆ  —º  —ı / 8 A ] ò < F O g † Ÿ „ Ï ≤ Î 0 0$ 7D 7É 8ç 8ñ ?≥ ? @Í @Û H HN Ià Ië PÆ PÍ RU R^ YÇ Y¿             <             cπ
