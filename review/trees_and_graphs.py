@@ -1,4 +1,4 @@
-# A tree is a data structure composed of nodes
+# A tree is a data structure composed of connected nodes (you can reach every node from the root)
 # 1) Each tree has a root node, 2) The root node has zero or more child nodes,
 # 3) Each child node has zero or more child nodes, and so on, 4) The tree can't contain any cycles.
 
@@ -7,7 +7,7 @@ class Node(object):
         self.name = name
         self.children = children
     
-class TreeNode(object):
+class BinaryTreeNode(object): # holds for a binary tree only (2 children)
     def __init__(self, value = "", left = None, right = None):
         self.value = value
         self.left = left
@@ -16,6 +16,13 @@ class TreeNode(object):
 class Tree(object):
     def __init__(self, root = TreeNode()):
         self.root = root
+
+# BASIC TREE TERMINOLOGY
+# Level: Root is level 1, its descendants/children are level 2, and so on.
+# Height: The leaf nodes have height 0, their parents have height 1, and so on.
+# Height of a Tree = Height of the Root Node
+# Depth: Number of edges to the root, moves inversely with height. Root has 0 depth, 
+# its children have 1 depth, and so on.
         
 # TREES VS BINARY TREES [always ask which one in interview!]
 # Binary trees have nodes with up to 2 children whereas trees don't have a limitation.
@@ -24,7 +31,7 @@ class Tree(object):
 # BINARY TREE VS BINARY SEARCH TREE
 # A binary search tree is a binary tree in which every node fits a specific
 # ordering property: all left descendents <= n < all right descendents
-# the equality on the left changes from definiton to definiton so clarify with
+# The equality on the left changes from definiton to definiton so clarify with
 # the interviewer (some say binary search trees can't have duplicate values.)
         
 # BE CAREFUL: The ordering property holds true for ALL OF a node's descendents, not
@@ -69,18 +76,50 @@ def inOrderTraversal(node):
 def preOrderTraversal(node):
     if node != None:    
         print(node)
-        inOrderTraversal(node.left)
-        inOrderTraversal(node.right)
+        preOrderTraversal(node.left)
+        preOrderTraversal(node.right)
         
 # 3) POST-ORDER TRAVERSAL
 # Post order traversal visits the current node after its child nodes (hence "post")
 # Hence, the root is always the last node visited.
 def postOrderTraversal(node):
     if node != None:    
-        inOrderTraversal(node.left)
-        inOrderTraversal(node.right)
+        postOrderTraversal(node.left)
+        postOrderTraversal(node.right)
         print(node)
         
+class BinarySearchTree(object):
+    def __init__(self, root): # initialize a BST (binary search tree)
+        self.root = BinaryTreeNode(root)
+
+    def insert(self, new_val):
+        self.insert_helper(self.root, new_val) # initialize recursive method
+
+    def insert_helper(self, current, new_val): # remember to use helpers in recursive questions
+        if current.value < new_val: # if current value is smaller than new value, check right
+            if current.right: # if right element exists, compare with it by calling recursion
+                self.insert_helper(current.right, new_val)
+            else: # if right element doesn't exits, simply place the value inside a node here
+                current.right = BinaryTreeNode(new_val)
+        else: # if current value is larger (or equal to) than the new value, check left
+            if current.left: # if left element exists, compare with it by calling recursion
+                self.insert_helper(current.left, new_val)
+            else: # if left element doesn't exist, simply place the value inside a node here
+                current.left = BinaryTreeNode(new_val)
+
+    def search(self, find_val): 
+        return self.search_helper(self.root, find_val) # initialize recursive methods
+
+    def search_helper(self, current, find_val):
+        if current: # if current node exists, go inside
+            if current.value == find_val: # return True if current node's value equal to search value
+                return True
+            elif current.value < find_val: # call recursion on the right subtree if current node's value smaller
+                return self.search_helper(current.right, find_val)
+            else: # call recursion on the left subtree if current node's value is greater
+                return self.search_helper(current.left, find_val)
+        return False # if there are no returns up until this point, return False since the search value is not found
+       
 # BINARY HEAPS (MIN-HEAPS AND MAX-HEAPS)
 # Min-heaps are heaps with their elements in ASCENDING order so that the root is the MINIMUM element.
 # Max-heaps are heaps with their elements in DESCENDING order so that the root is the MAXIMUM element.
@@ -242,8 +281,3 @@ def search_breadth(root):
 # be O(V+E). The difference is a sparsely connected graph and a densely connected graph.
 # Therefore, O(V+E) means whichever term is bigger will dominate the time complexity. 
 # That is why the time complexity of BFS is O(V+E).
-
-    
-
-
-        
