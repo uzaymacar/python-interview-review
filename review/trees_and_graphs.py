@@ -209,15 +209,31 @@ class TrieNode(object):
 # Pre-order and other forms of tree traversal are a form of DFS (because of recursion!)
 # To not risk getting stuck in an infinite loop, we have to check if each node is visited before
 
-def search_depth(root):
+def search_depth_recursive(root):
     if root == None:
         return None
     print(root)
     root.visited = True # don't forget to mark visited
     for node in root.adjacent:
         if node.visited == False: # search recursively only if not visited before!
-            search_depth(node)
+            search_depth_recursive(node)
         
+def search_depth_iterative(root):
+    stack = [root] # stack initialized with the root node
+    # visited = [] # visited list will hold the nodes in place as they are visited/print
+    # Instead of a 'visited' list, we will make use of the node object property 'visited'.
+    
+    while stack: # while there are element in stack
+        node = stack.pop() # pop the 'last in' element 
+        if node.visited == False: # if the popped element is not visited,
+            print(node) # visit the node
+            node.visited = True # don't forget to mark visited   
+            for neighbor in node.adjacent: # add all neighbours to the stack
+                stack.append(neighbor) 
+
+# In the above algorithm, notice that the last added neighbor will be popped, then
+# subsequently its last added child will be popped, and so on. Hence the depth-first-traversal.
+                
 # 2) BREADTH-FIRST SEARCH (BFS)
 # Start at the root and explore each neighbor before going on to any of their children.
 # GO WIDE BEFORE GOING DEEP
