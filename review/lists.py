@@ -129,7 +129,7 @@ class PriorityQueue(object):
     def __init__(self): 
         self.queue = [] 
   
-    def __str__(self): 
+    def __str__(self): # method invoked with print() and str() calls/casts.
         return ' '.join([str(i) for i in self.queue]) 
   
     # for checking if the queue is empty 
@@ -143,12 +143,12 @@ class PriorityQueue(object):
     # for popping an element based on priority with O(N) time
     def delete(self): 
         try: 
-            max = 0 # here priority is set according to largeness of an integer number
+            max_index = 0 # here priority is set according to largeness of an integer number
             for i in range(len(self.queue)): 
-                if self.queue[i] > self.queue[max]: 
-                    max = i 
-            item = self.queue[max] 
-            del self.queue[max] # to delete the item at max index
+                if self.queue[i] > self.queue[max_index]: 
+                    max_index = i 
+            item = self.queue[max_index] 
+            del self.queue[max_index] # to delete the item at max index
             return item 
         except IndexError: 
             print() 
@@ -156,8 +156,8 @@ class PriorityQueue(object):
 
 # DIFFERENCE BETWEEN DEL, POP, AND REMOVE
 # Use del to remove an element by index, pop() to remove it by index 
-# if you need the returned value, and remove() to delete an element by value (first encountered)
-# removere quires searching the list, and raises ValueError if no such value occurs in the list.
+# if you NEED the returned value, and remove() to delete an element by value (first encountered)
+# remove requires searching the list, and raises ValueError if no such value occurs in the list.
 
 # When deleting index i from a list of n elements, 
 #the computational complexities of these methods are
