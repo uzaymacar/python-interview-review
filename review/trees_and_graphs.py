@@ -14,7 +14,7 @@ class BinaryTreeNode(object): # holds for a binary tree only (2 children)
         self.right = right
     
 class Tree(object):
-    def __init__(self, root = TreeNode()):
+    def __init__(self, root = BinaryTreeNode()):
         self.root = root
 
 # BASIC TREE TERMINOLOGY
@@ -227,13 +227,13 @@ def search_depth_iterative(root):
         node = stack.pop() # pop the 'last in' element 
         if node.visited == False: # if the popped element is not visited,
             print(node) # visit the node
-            node.visited = True # don't forget to mark visited   
+            node.visited = True # don't forget to mark visited
             for neighbor in node.adjacent: # add all neighbours to the stack
                 stack.append(neighbor) 
 
 # In the above algorithm, notice that the last added neighbor will be popped, then
 # subsequently its last added child will be popped, and so on. Hence the depth-first-traversal.
-                
+            
 # 2) BREADTH-FIRST SEARCH (BFS)
 # Start at the root and explore each neighbor before going on to any of their children.
 # GO WIDE BEFORE GOING DEEP
