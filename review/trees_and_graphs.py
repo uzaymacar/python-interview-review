@@ -2,20 +2,29 @@
 # 1) Each tree has a root node, 2) The root node has zero or more child nodes,
 # 3) Each child node has zero or more child nodes, and so on, 4) The tree can't contain any cycles.
 
-class Node(object):
-    def __init__(self, name = "", children = []):
-        self.name = name
-        self.children = children
+class Node(object): # class for basic tree node
+    def __init__(self, value = "", adjacent = []):
+        self.value = value
+        self.adjacent = adjacent
+        self.visited = False
     
-class BinaryTreeNode(object): # holds for a binary tree only (2 children)
+    def __str__(self):
+        return "Value: " + self.value + ", Children: " + str([str(node) for node in self.adjacent])
+    
+class BinaryTreeNode(object): # class for a binary tree node (w/ 2 children)
     def __init__(self, value = "", left = None, right = None):
         self.value = value
         self.left = left
         self.right = right
     
+    def __str__(self):
+        return "Value: " + self.value + ", Left Child: " + str(self.left) + ", Right Child: " + str(self.right)
+     
 class Tree(object):
     def __init__(self, root = BinaryTreeNode()):
         self.root = root
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # BASIC TREE TERMINOLOGY
 # Level: Root is level 1, its descendants/children are level 2, and so on.
@@ -24,6 +33,28 @@ class Tree(object):
 # Depth: Number of edges to the root, moves inversely with height. Root has 0 depth, 
 # its children have 1 depth, and so on.
         
+def get_depth(binary_tree):
+    return get_depth_helper(binary_tree.root)
+
+def get_depth_helper(node): # recursive method 
+    current_depth = -1 # not counted for root yet, start with -1
+    
+    for child_node in node.adjacent:
+        current_depth = max(current_depth, get_depth_helper(child_node)) # recursively set current_depth
+    
+    return current_depth + 1 # plus one comes from the newly counted node
+
+binary_tree_depth2 = Tree(Node("A", [Node("B", [Node("D")]), Node("C")]))
+assert(get_depth(binary_tree_depth2) == 2)
+
+binary_tree_depth1 = Tree(Node("A", [Node("B")]))
+assert(get_depth(binary_tree_depth1) == 1)
+
+binary_tree_depth0 = Tree(Node("A"))
+assert(get_depth(binary_tree_depth0) == 0)
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+       
 # TREES VS BINARY TREES [always ask which one in interview!]
 # Binary trees have nodes with up to 2 children whereas trees don't have a limitation.
 # A node is called a "leaf" node if it has no children.
@@ -37,21 +68,76 @@ class Tree(object):
 # BE CAREFUL: The ordering property holds true for ALL OF a node's descendents, not
 # just the immediate children!
         
-# BALANCED VS UNBALANCED
-# Perfect binary trees != Balanced trees (don't fall for this!)
+# BALANCED VS UNBALANCED BINARY TREE
+# Perfect binary trees != Balanced binary trees (don't fall for this!)
 # A "balanced" tree is a tree that is not "terribly imbalanced"; it is balanced enough to
 # ensure O(log(N)) runtimes for insert and find, but it's not necessarily 
 # as balanced as it could be.
         
 # COMPLETE BINARY TREE
-# A complete binary tree js a binary tree in which every level of the tree is fully filled
+# A complete binary tree is a binary tree in which every level of the tree is fully filled
 # with the exception of the last level. To the extent that the last level is filled,
 # it is filled left to right (left should come first!)
         
+def check_completeness(binary_tree):
+    queue = [] # queue (FIFO) for breadth first (level) traversal
+    full_node = True # assume we start with a full node, will update this flag accordingly
+    root = binary_tree.root # extract root
+    
+    if root == None: # base case: empty tree = complete
+        return True
+    
+    queue.append(root) # initialize queue with root
+    while queue: # loop until no element is left inside the queue
+        node = queue.pop(0) # dequeue 'first in' node
+        
+        if node.left: # check if left child is present first (left-to-right fill)
+            if full_node == False: # if we have seen a non-full node before visiting the left child,
+                return False # we have a space BEFORE the last level, hence not complete
+            queue.append(node.left) # enqueue left child
+        else: # if this is a node with no left child, set flag to False
+            full_node = False
+        
+        if node.right: # check if right child is present second (left-to-right fill)
+            if full_node == False: # if seen a non-full node before visiting the right child, this may be by
+                return False # a) left child or b) a space in a level above, hence not complete
+            queue.append(node.right) # enqueue left child
+        else: # if this is a node with no right child, set flag to False
+            full_node = False
+            
+    return True # if this line is reached, the tree has to be complete
+    
+complete_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), right = BinaryTreeNode("C")))
+assert(check_completeness(complete_binary_tree) == True)
+
+uncomplete_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), right = BinaryTreeNode("C", left = BinaryTreeNode("E"))))
+assert(check_completeness(uncomplete_binary_tree) == False)
+       
 # FULL BINARY TREE
 # A full binary tree is a binary tree in which every node has either zero or two children.
 # That is, no nodes have only one child.
-        
+
+def check_fullness(binary_tree):
+    return check_fullness_helper(binary_tree.root)
+
+def check_fullness_helper(node):
+    if node != None: # remember to check for the null case
+        child_count = 0 # child count
+        if node.left != None:
+            child_count += 1
+        if node.right != None:
+            child_count += 1  
+        if child_count != 0 and child_count != 2: # if child count is 1, return False
+            return False   
+        return check_fullness_helper(node.left) and check_fullness_helper(node.right) # two recursive calls combined
+    return True # return True in the null case -> it doesn't break any rules
+
+full_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B"), right = BinaryTreeNode("C")))
+assert(check_fullness(full_binary_tree) == True)
+
+unfull_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), right = BinaryTreeNode("C")))
+assert(check_fullness(unfull_binary_tree) == False)
+       
 # PERFECT BINARY TREE
 # A perfect binary tree is one that is both a FULL BINARY TREE and a COMPLETE BINARY TREE.
 # This requires all "leaf" nodes to be at the same level and this level will have
@@ -59,7 +145,19 @@ class Tree(object):
 # A perfect tree must have exactly 2^k - 1 nodes.
 # Never assume that a binary tree is perfect.
 
+def check_perfectness(binary_tree):
+    return check_fullness(binary_tree) and check_completeness(binary_tree)
+
+perfect_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B"), right = BinaryTreeNode("C")))
+assert(check_perfectness(perfect_binary_tree) == True)
+
+unperfect_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), right = BinaryTreeNode("C")))
+assert(check_fullness(unperfect_binary_tree) == False)
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # BINARY TREE TRAVERSAL
+# The 3 binary tree traversal methods seen below are all examples of DFS (depth-first-search)
         
 # 1) IN-ORDER TRAVERSAL
 # In order is to visit the left branch, then the current node, and then finally the right branch
@@ -87,8 +185,10 @@ def postOrderTraversal(node):
         postOrderTraversal(node.left)
         postOrderTraversal(node.right)
         print(node)
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
         
-class BinarySearchTree(object):
+class BinarySearchTree(object): # class for binary search tree
     def __init__(self, root): # initialize a BST (binary search tree)
         self.root = BinaryTreeNode(root)
 
@@ -111,15 +211,17 @@ class BinarySearchTree(object):
         return self.search_helper(self.root, find_val) # initialize recursive methods
 
     def search_helper(self, current, find_val):
-        if current: # if current node exists, go inside
-            if current.value == find_val: # return True if current node's value equal to search value
+        if current: # iff current node exists, go inside
+            if current.value == find_val: # return True if node's value equal to search value
                 return True
-            elif current.value < find_val: # call recursion on the right subtree if current node's value smaller
+            elif current.value < find_val: # call recursion on the right subtree if node's value smaller than search value
                 return self.search_helper(current.right, find_val)
-            else: # call recursion on the left subtree if current node's value is greater
+            else: # call recursion on the left subtree if current node's value greater than search value
                 return self.search_helper(current.left, find_val)
         return False # if there are no returns up until this point, return False since the search value is not found
-       
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # BINARY HEAPS (MIN-HEAPS AND MAX-HEAPS)
 # Min-heaps are heaps with their elements in ASCENDING order so that the root is the MINIMUM element.
 # Max-heaps are heaps with their elements in DESCENDING order so that the root is the MAXIMUM element.
@@ -149,6 +251,8 @@ class BinarySearchTree(object):
 # THERE IS NO INHERENT ORDERING BETWEEN LEFT AND RIGHT CHILD, therefore we take the SMALLER
 # ELEMENT to maintain MIN-HEAP PROPERTY. This algorithm will also take O(log(N)) runtime.
 
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # TRIES (PREFIX TREES)
 # A trie is a variant of an n-ary tree in which characters are stored at each node.
 # Each path down the tree may represent a word. The * nodes, sometimes called "null nodes"
@@ -164,7 +268,9 @@ class BinarySearchTree(object):
 # Although we often refer to hash table lookups as being O(1) time, since they have to
 # check each character in the case of a string, they also take O(K) time in a word lookup.
 # M -> MA -> MAN -> MANY
-        
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 # GRAPHS
 # A tree is actually a type of graph, but not all graphs are trees. A tree is a connected graph
 # WITHOUT cycles. A graph is simply a colelction of nodes with edges between (some of) them.
@@ -187,9 +293,9 @@ class Graph(object): # unlike in a tree, you can't necessarily reach all the nod
         self.nodes = adjacentVertices # adjacency list
         
 class TrieNode(object):
-    def __init__(self, name = "", children = []):
+    def __init__(self, name = "", adjacent = []):
         self.name = name
-        self.adjacent = [] # adjacency list
+        self.adjacent = adjacent # adjacency list
         self.visited = False
         
 # ADJACENCY MATRIX
@@ -199,7 +305,9 @@ class TrieNode(object):
 
 # Graph algorithms (like breadth-first search) are usually LESS EFFICIENT to perform with a adjacency
 # matrix when compared with a adjacency list.
-        
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+     
 # GRAPH SEARCH
 
 # 1) DEPTH-FIRST SEARCH (DFS)
@@ -255,10 +363,6 @@ class Queue(object): # queue implementation using standard Python list
     
     def isEmpty(self):
         return self.storage == []
-    
-
-# abc = Queue() # isEmpty() test
-# print(abc.isEmpty()) -> True
 
 def search_breadth(root):
     queue = Queue()
@@ -272,7 +376,18 @@ def search_breadth(root):
             if node.visited == False:
                 node.visited = True
                 queue.enqueue(node) # append adjacents to the queue one by one
-        
+
+
+# TIME COMPLEXITIES OF BFS AND DFS
+# The Time complexity of both BFS and DFS will be O(V + E), where V is the number of vertices, 
+# and E is the number of Edges. This again depends on the data strucure that we used to represent 
+# the graph. If it is an adjacency matrix, it will be O(V^2) . If we use an adjacency list, it will 
+# be O(V+E). The difference is a sparsely connected graph and a densely connected graph.
+# Therefore, O(V+E) means whichever term is bigger will dominate the time complexity. 
+# That is why the time complexity of BFS is O(V+E).
+                
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+     
 # BIDIRECTIONAL SEARCH
 # Bidirectional search is used to find the shortest node between a source and a destination node.
 # It operates by essentially running two simultaneous breadth-first searches, one from each node (source and destination).
@@ -289,11 +404,3 @@ def search_breadth(root):
 # b) In bidirectional search, we have two searches that collide after approximately d/2 levels
 # (midpoint of the path). The search from s visits approximately k^(d/2) as does search from t.
 # That's approximately 2k^(d/2) nodes and therefore a total runtime of O(k^(d/2))
-
-# TIME COMPLEXITIES OF BFS AND DFS
-# The Time complexity of both BFS and DFS will be O(V + E), where V is the number of vertices, 
-# and E is the number of Edges. This again depends on the data strucure that we user to represent 
-# the graph. If it is an adjacency matrix, it will be O(V^2) . If we use an adjacency list, it will 
-# be O(V+E). The difference is a sparsely connected graph and a densely connected graph.
-# Therefore, O(V+E) means whichever term is bigger will dominate the time complexity. 
-# That is why the time complexity of BFS is O(V+E).
