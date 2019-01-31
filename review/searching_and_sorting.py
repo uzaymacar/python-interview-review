@@ -193,6 +193,7 @@ def fib_without_cache_bottom_up(position):
    memoization, the runtime complexity is O(n) which is a huge improvement from the previous 
    exponential runtime.
 """
+
 # -----------------------------------------------------------------------------------------------------
 
 """
@@ -207,6 +208,7 @@ NOTE ABOUT PYTHON DICTIONARIES
     
 -> NOTE FOR ME: Check folder, 'hash table web archive', for details.
 """
+
 # -----------------------------------------------------------------------------------------------------
 
 """
@@ -251,6 +253,7 @@ shortBubbleSort(alist)
 print("Short Bubble sorted list: " + str(alist))
 
 print()
+
 # -----------------------------------------------------------------------------------------------------
 
 """
@@ -301,6 +304,7 @@ mergeSort(alist)
 print("Merge sorted list: " + str(alist))
 
 print()
+
 # -----------------------------------------------------------------------------------------------------
 
 """
@@ -351,6 +355,7 @@ quickSort(alist)
 print("Quick sorted list: " + str(alist))
 
 print()
+
 # -----------------------------------------------------------------------------------------------------
 
 """
@@ -406,6 +411,7 @@ def radixSort(arr):
 # TESTING
 print("Radix sorted list: " + str(radixSort([1, 4, 146, 25, 7, 53, 2211])))
 print()
+
 # -----------------------------------------------------------------------------------------------------
 
 """
