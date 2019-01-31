@@ -205,7 +205,7 @@ NOTE ABOUT PYTHON DICTIONARIES
    function which generates an unique result for each unique value supplied to the hash function.  
    2) The order of data elements in a dictionary is not fixed. 
     
--> Check folder, 'hash table web archive', for details.
+-> NOTE FOR ME: Check folder, 'hash table web archive', for details.
 """
 # -----------------------------------------------------------------------------------------------------
 
