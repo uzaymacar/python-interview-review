@@ -1,8 +1,18 @@
-# A tree is a data structure composed of connected nodes (you can reach every node from the root)
-# 1) Each tree has a root node, 2) The root node has zero or more child nodes,
-# 3) Each child node has zero or more child nodes, and so on, 4) The tree can't contain any cycles.
+"""
+TREE DATA STRUCTURE
 
-class Node(object): # class for basic tree node
+-> A tree is a data structure composed of connected nodes. Connected means 
+   that every node is reachable from the root, one way or another.
+   
+-> There are 3 basic rules to follow:
+   1) Each tree has a root node.
+   2) The root node has zero or more child nodes.
+   3) Each child node has zero or more child nodes, and so on.
+   4) The tree doesn't contain any CYCLES.
+"""
+
+# BASIC TREE NODE IMPLEMENTATION
+class Node(object):
     def __init__(self, value = "", adjacent = []):
         self.value = value
         self.adjacent = adjacent
@@ -10,29 +20,35 @@ class Node(object): # class for basic tree node
     
     def __str__(self):
         return "Value: " + self.value + ", Children: " + str([str(node) for node in self.adjacent])
-    
-class BinaryTreeNode(object): # class for a binary tree node (w/ 2 children)
+
+# BINARY TREE NODE IMPLEMENATION 
+# A binary tree has a maximum of 2 children, denoted as left and right.
+class BinaryTreeNode(object):
     def __init__(self, value = "", left = None, right = None):
         self.value = value
         self.left = left
         self.right = right
     
     def __str__(self):
-        return "Value: " + self.value + ", Left Child: " + str(self.left) + ", Right Child: " + str(self.right)
-     
+        return "Value: " + self.value + ", L: " + str(self.left) + ", R: " + str(self.right)
+
+# BASIC TREE IMPLEMENTATION
 class Tree(object):
     def __init__(self, root = BinaryTreeNode()):
         self.root = root
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------
 
-# BASIC TREE TERMINOLOGY
-# Level: Root is level 1, its descendants/children are level 2, and so on.
-# Height: The leaf nodes have height 0, their parents have height 1, and so on.
-# Height of a Tree = Height of the Root Node
-# Depth: Number of edges to the root, moves inversely with height. Root has 0 depth, 
-# its children have 1 depth, and so on.
-        
+"""
+BASIC TREE TERMINOLOGY
+
+-> Level: Root is level 1, its descendants/children are level 2, and so on.
+-> Height: The leaf nodes have height 0, their parents have height 1, and so on.
+-> Height of a Tree = Height of the Root Node
+-> Depth: Number of edges to the root, moves inversely with height. Root has 0 depth, 
+   its children have 1 depth, and so on.
+"""
+  
 def get_depth(binary_tree):
     return get_depth_helper(binary_tree.root)
 
@@ -40,7 +56,7 @@ def get_depth_helper(node): # recursive method
     current_depth = -1 # not counted for root yet, start with -1
     
     for child_node in node.adjacent:
-        current_depth = max(current_depth, get_depth_helper(child_node)) # recursively set current_depth
+        current_depth = max(current_depth, get_depth_helper(child_node)) # recursively set depth
     
     return current_depth + 1 # plus one comes from the newly counted node
 
@@ -53,32 +69,41 @@ assert(get_depth(binary_tree_depth1) == 1)
 binary_tree_depth0 = Tree(Node("A"))
 assert(get_depth(binary_tree_depth0) == 0)
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------
-       
-# TREES VS BINARY TREES [always ask which one in interview!]
-# Binary trees have nodes with up to 2 children whereas trees don't have a limitation.
-# A node is called a "leaf" node if it has no children.
+# -----------------------------------------------------------------------------------------------------
+"""
+ADVANCED TREE TERMINOLOGY
+
+-> In an interview, you ideally want to clarify the category of the tree structure you are expected
+   to implement or work on. This is not only for clarity, but also for checking the correct
+   base and edge cases.
+
+TREES VS BINARY TREES 
+-> Binary trees have nodes with up to 2 children whereas trees don't have a limitation.
+   
+-> Side Note: A node is called a "leaf" node if it has no children.
         
-# BINARY TREE VS BINARY SEARCH TREE
-# A binary search tree is a binary tree in which every node fits a specific
-# ordering property: all left descendents <= n < all right descendents
-# The equality on the left changes from definiton to definiton so clarify with
-# the interviewer (some say binary search trees can't have duplicate values.)
+BINARY TREE VS BINARY SEARCH TREE
+-> A binary search tree is a special type of binary tree in which every node fits a specific
+   ordering property: all left descendents <= n < all right descendents.
+-> The equality on the left changes from definiton to definiton so clarify with
+   the interviewer; some say binary search trees can't have duplicate values.
         
-# BE CAREFUL: The ordering property holds true for ALL OF a node's descendents, not
-# just the immediate children!
+-> BE CAREFUL: The ordering property holds true for ALL OF a node's descendents, not
+   just the immediate children!
         
-# BALANCED VS UNBALANCED BINARY TREE
-# Perfect binary trees != Balanced binary trees (don't fall for this!)
-# A "balanced" tree is a tree that is not "terribly imbalanced"; it is balanced enough to
-# ensure O(log(N)) runtimes for insert and find, but it's not necessarily 
-# as balanced as it could be.
+BALANCED VS UNBALANCED BINARY TREE
+-> Perfect binary trees != Balanced binary trees (don't fall for this!)
+-> A "balanced" tree is a tree that is not "terribly imbalanced"; it is balanced enough to
+   ensure O(log(N)) runtimes for insert and find, but it's not necessarily as balanced as it could be.
         
-# COMPLETE BINARY TREE
-# A complete binary tree is a binary tree in which every level of the tree is fully filled
-# with the exception of the last level. To the extent that the last level is filled,
-# it is filled left to right (left should come first!)
-        
+COMPLETE BINARY TREE
+-> A complete binary tree is a binary tree in which every level of the tree is fully filled
+   with the exception of the last level. 
+-> To the extent that the last level is filled, it is filled left to right, meaning that left children 
+   should be filled before right children.
+"""
+
+# COMPLETENESS IMPLEMENTATION
 def check_completeness(binary_tree):
     queue = [] # queue (FIFO) for breadth first (level) traversal
     full_node = True # assume we start with a full node, will update this flag accordingly
@@ -99,24 +124,31 @@ def check_completeness(binary_tree):
             full_node = False
         
         if node.right: # check if right child is present second (left-to-right fill)
-            if full_node == False: # if seen a non-full node before visiting the right child, this may be by
+            if full_node == False: # if seen a non-full node before visiting the right child, because
                 return False # a) left child or b) a space in a level above, hence not complete
             queue.append(node.right) # enqueue left child
         else: # if this is a node with no right child, set flag to False
             full_node = False
             
     return True # if this line is reached, the tree has to be complete
-    
-complete_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), right = BinaryTreeNode("C")))
+
+# TESTING   
+complete_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", 
+                            left = BinaryTreeNode("D")), right = BinaryTreeNode("C")))
 assert(check_completeness(complete_binary_tree) == True)
 
-uncomplete_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), right = BinaryTreeNode("C", left = BinaryTreeNode("E"))))
+uncomplete_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", 
+                              left = BinaryTreeNode("D")), right = BinaryTreeNode("C", 
+                                     left = BinaryTreeNode("E"))))
 assert(check_completeness(uncomplete_binary_tree) == False)
-       
-# FULL BINARY TREE
-# A full binary tree is a binary tree in which every node has either zero or two children.
-# That is, no nodes have only one child.
 
+"""    
+FULL BINARY TREE
+-> A full binary tree is a binary tree in which every node has either zero or two children.
+-> Equivalently, this means that no nodes have only one child.
+"""
+
+# FULLNESS IMPLEMENTATION
 def check_fullness(binary_tree):
     return check_fullness_helper(binary_tree.root)
 
@@ -128,67 +160,108 @@ def check_fullness_helper(node):
         if node.right != None:
             child_count += 1  
         if child_count != 0 and child_count != 2: # if child count is 1, return False
-            return False   
-        return check_fullness_helper(node.left) and check_fullness_helper(node.right) # two recursive calls combined
+            return False
+        # two recursive calls combined
+        return check_fullness_helper(node.left) and check_fullness_helper(node.right) 
     return True # return True in the null case -> it doesn't break any rules
 
+# TESTING
 full_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B"), right = BinaryTreeNode("C")))
 assert(check_fullness(full_binary_tree) == True)
 
-unfull_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), right = BinaryTreeNode("C")))
+unfull_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), 
+                          right = BinaryTreeNode("C")))
 assert(check_fullness(unfull_binary_tree) == False)
-       
-# PERFECT BINARY TREE
-# A perfect binary tree is one that is both a FULL BINARY TREE and a COMPLETE BINARY TREE.
-# This requires all "leaf" nodes to be at the same level and this level will have
-# the maximum number of nodes as it will be the last level.
-# A perfect tree must have exactly 2^k - 1 nodes.
-# Never assume that a binary tree is perfect.
 
+"""
+PERFECT BINARY TREE
+-> A perfect binary tree is one that is both a FULL BINARY TREE and a COMPLETE BINARY TREE.
+
+-> This requires all "leaf" nodes to be at the same level and this level will have
+   the maximum number of nodes as it will be the last level.
+
+-> A perfect tree must have exactly 2^k - 1 nodes.
+
+-> Never assume that a binary tree is perfect.
+"""
+
+# PERFECTNESS IMPLEMENTATION
 def check_perfectness(binary_tree):
     return check_fullness(binary_tree) and check_completeness(binary_tree)
 
-perfect_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B"), right = BinaryTreeNode("C")))
+# TESTING
+perfect_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B"), 
+                           right = BinaryTreeNode("C")))
 assert(check_perfectness(perfect_binary_tree) == True)
 
-unperfect_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", left = BinaryTreeNode("D")), right = BinaryTreeNode("C")))
+unperfect_binary_tree = Tree(BinaryTreeNode("A", left = BinaryTreeNode("B", 
+                             left = BinaryTreeNode("D")), right = BinaryTreeNode("C")))
 assert(check_fullness(unperfect_binary_tree) == False)
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------
+"""
+BINARY TREE TRAVERSAL
 
-# BINARY TREE TRAVERSAL
-# The 3 binary tree traversal methods seen below are all examples of DFS (depth-first-search)
+-> Conventionally, there exists 3 ways to traversa binary tree:
+   1) In-order traversal
+   2) Pre-order traversal
+   3) Post-order traversal
+    
+-> All 3 binary tree traversal methods noted above are examples of DFS (depth-first-search).
+"""
         
-# 1) IN-ORDER TRAVERSAL
-# In order is to visit the left branch, then the current node, and then finally the right branch
-# left child -> parent -> right child, visits the nodes in ASCENDING order in a BINARY SEARCH TREE
+"""
+-> In-order traversal visits the left branch, then the current node, and then finally the right branch.
+-> left child -> parent -> right child, visits the nodes in ASCENDING order in a BINARY SEARCH TREE,
+   hence the name in-order.
+"""
+# IN-ORDER TRAVERSAL IMPLEMENTATION
 def inOrderTraversal(node):
     if node != None:
         inOrderTraversal(node.left)
         print(node)
         inOrderTraversal(node.right)
-    
-# 2) PRE-ORDER TRAVERSAL
-# Pre order visits the current node before its child nodes (hence "pre")
-# Hence, the root is always the first node visited.
+
+"""
+-> Pre-order traversal visits the current node before its child nodes (hence "pre")
+-> Hence, the root is always the first node visited.
+"""
+# PRE-ORDER TRAVERSAL IMPLEMENTATION
 def preOrderTraversal(node):
     if node != None:    
         print(node)
         preOrderTraversal(node.left)
         preOrderTraversal(node.right)
-        
-# 3) POST-ORDER TRAVERSAL
-# Post order traversal visits the current node after its child nodes (hence "post")
-# Hence, the root is always the last node visited.
+
+"""
+-> Post-order traversal visits the current node after its child nodes, hence the name post.
+-> The root is always the last node visited.
+"""
+# POST-ORDER TRAVERSAL IMPLEMENATION
 def postOrderTraversal(node):
     if node != None:    
         postOrderTraversal(node.left)
         postOrderTraversal(node.right)
         print(node)
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------
-        
-class BinarySearchTree(object): # class for binary search tree
+# -----------------------------------------------------------------------------------------------------
+"""
+BINARY SEARCH TREE
+
+-> Time Complexities:
+   Access -> O(log(N)) on average - O(N) on worst case
+   Search -> O(log(N)) on average - O(N) on worst case
+   Insertion -> O(log(N)) on average - O(N) on worst case
+   Deletion -> O(log(N)) on average - O(N) on worst case
+   
+-> Thus, O(log(N)) on average - O(N) on worst case runtime complexity holds for access, search,
+   insertion, and deletion in a binary search tree.
+   
+-> Space Complexity: O(N)
+"""
+
+# BINARY SEARCH TREE IMPLEMENTATION
+class BinarySearchTree(object):
     def __init__(self, root): # initialize a BST (binary search tree)
         self.root = BinaryTreeNode(root)
 
@@ -214,44 +287,73 @@ class BinarySearchTree(object): # class for binary search tree
         if current: # iff current node exists, go inside
             if current.value == find_val: # return True if node's value equal to search value
                 return True
-            elif current.value < find_val: # call recursion on the right subtree if node's value smaller than search value
+            # call recursion on the right subtree if node's value smaller than search value
+            elif current.value < find_val: 
                 return self.search_helper(current.right, find_val)
-            else: # call recursion on the left subtree if current node's value greater than search value
+            # call recursion on the left subtree if current node's value greater than search value
+            else: 
                 return self.search_helper(current.left, find_val)
-        return False # if there are no returns up until this point, return False since the search value is not found
+        # if there are no returns up until this point, return False since the search value is not found
+        return False 
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------
 
-# BINARY HEAPS (MIN-HEAPS AND MAX-HEAPS)
-# Min-heaps are heaps with their elements in ASCENDING order so that the root is the MINIMUM element.
-# Max-heaps are heaps with their elements in DESCENDING order so that the root is the MAXIMUM element.
+"""
+BINARY HEAPS (MIN-HEAPS AND MAX-HEAPS)
 
-# A min-heap is a COMPLETE binary tree (totally filled other than the rightmost elements on the last level)
-# where each node is smaller than its children.
+-> Min-heaps are heaps with their elements in ASCENDING order so that the root is the MINIMUM element.
+-> Max-heaps are heaps with their elements in DESCENDING order so that the root is the MAXIMUM element.
+
+-> A min-heap is a COMPLETE (totally filled other than the rightmost elements on the last level) 
+   binary tree where each node is smaller than its children.
         
-# Why array based representation for Binary Heap?
-# Since a Binary Heap is a Complete Binary Tree, it can be easily represented as array and array 
-# based representation is space efficient. If the parent node is stored at index I, 
-# the left child can be calculated by 2 * I + 1 and right child by 2 * I + 2 
-# (assuming the indexing starts at 0).
-# CHECK HEAP SORT IN PYTHON_SEARCHING_AND_SORTING
+-> Why should you choose array based representation for binary heap?
+   Since a Binary Heap is a complete binary tree, it can be easily represented as array,
+   and array based representation is space efficient. 
+   
+-> If the parent node is stored at index I, a) the left child index can be calculated by [2 * I] + 1, 
+   and b) the right child index can be calculated by [2 * I] + 2 assuming the indexing starts at 0.
+    
+-> NOTE FOR ME: Check heap sort in python_searching_and_sorting
 
-# We have two key operations on a min-heap: insert and extract_min
+-> By convention and as an industry practice, most algorithms implement min-heap 
+   rather than the max-heap.
+    
+-> We have two key operations on a min-heap: 1) insert, and 2) extract minimum element
 
-# INSERT       
-# When we insert into a min-heap, we always start by inserting the element at the bottom.
-# We insert at the rightmost spot so as to maintain the complete tree property.
-# Then we "fix" the tree by swapping the new element with its parent and we essentially bubble
-# up the min element. This takes O(log(N)) time where N = number of nodes in the heap
+-> INSERT       
+   a) When we insert an element into a min-heap, we always start by inserting the element at 
+   the bottom. We insert at the rightmost spot so as to maintain the complete tree property.
+   b) Then we "fix" the tree by swapping the new element with its parent (if smaller than the parent)
+   and we essentially bubble up the min element. 
+
+-> Insert operation takes O(log(N)) time where N = number of nodes in the heap.
         
-# EXTRACT MIN ELEMENT
-# The minimum element is always at the top! First, remove the minimum element and swap it with the last
-# element in the heap which is the BOTTOMMOST AND RIGHTMOST element. Then we bubble down this
-# element, swapping it with one of its children until the MIN-HEAP PROPERTY is restored
-# THERE IS NO INHERENT ORDERING BETWEEN LEFT AND RIGHT CHILD, therefore we take the SMALLER
-# ELEMENT to maintain MIN-HEAP PROPERTY. This algorithm will also take O(log(N)) runtime.
+-> EXTRACT MINIMUM ELEMENT
+   The minimum element is always at the top! 
+   a) First, remove the minimum element and swap it with the last element in the heap which is the 
+   BOTTOMMOST AND RIGHTMOST element. 
+   b) Then we bubble down this element, swapping it with one of its children until the MIN-HEAP 
+   PROPERTY (parents always hold values smaller than children) restored.
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------
+-> Extracting minimum element operation also takes O(log(N)) runtime where N = number of nodes in the 
+   heap.
+   
+-> IMPORTANT: There is no inherent ordering between the left and the right child. Therefore, we take 
+   the SMALLER ELEMENT to maintain MIN-HEAP PROPERTY. T
+"""
+
+# MIN-HEAP IMPLEMENTATION
+# TODO: Finish min-heap implementation
+class MinHeap(object): # class for binary search tree
+    def __init__(self, root = BinaryTreeNode()): # initialize a BST (binary search tree)
+        self.root = root
+
+    def extract_min(self):
+        return None
+        
+
+# -----------------------------------------------------------------------------------------------------
 
 # TRIES (PREFIX TREES)
 # A trie is a variant of an n-ary tree in which characters are stored at each node.
